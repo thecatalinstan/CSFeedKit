@@ -10,6 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ *  The `CSRSSFeed` class represents an RSS feed.
+ */
+
 @interface CSRSSFeed : CSFeed
 
 @end

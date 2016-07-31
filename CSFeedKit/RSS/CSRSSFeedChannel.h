@@ -10,6 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ *  The `CSRSSFeedChannel` class represents an RSS feed channel.
+ */
+
 @interface CSRSSFeedChannel : CSFeedChannel
 
 @end

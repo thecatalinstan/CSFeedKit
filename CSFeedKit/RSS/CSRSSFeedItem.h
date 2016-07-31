@@ -10,8 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ *  The `CSRSSFeedItem` class represents an RSS feed item.
+ */
 @interface CSRSSFeedItem : CSFeedItem
 
+/**
+ *  The creator of the feed.
+ *
+ *  @see ["http://purl.org/dc/elements/1.1/]("http://purl.org/dc/elements/1.1/)
+ */
 @property (nonatomic, strong, nullable) NSString * creator;
 
 @end
