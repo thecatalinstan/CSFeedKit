@@ -51,8 +51,6 @@
     XCTAssertNotNil(feed);
     XCTAssertNil(error);
 
-    NSLog(@"%@",feed.XMLDocument);
-
     NSString * blankXMLString = @"";
     NSError * blankError;
     CSRSSFeed * blankFeed;
