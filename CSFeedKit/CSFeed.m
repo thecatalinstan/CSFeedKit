@@ -62,11 +62,11 @@
     NSXMLElement * element = [NSXMLElement elementWithName:self.nodeName];
 
     if ( self.version.length > 0 ) {
-        [element setAttributesWithDictionary:@{@"version": self.version}];
+        [element addAttribute:[NSXMLNode attributeWithName:@"version" stringValue:self.version]];
     }
 
     [self.namespaces enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSString * _Nonnull obj, BOOL * _Nonnull stop) {
-        [element setAttributesWithDictionary:@{[NSString stringWithFormat:@"xmlns:%@", key]: obj}];
+        [element addAttribute:[NSXMLNode attributeWithName:[NSString stringWithFormat:@"xmlns:%@", key] stringValue:obj]];
     }];
 
     [self.channels enumerateObjectsUsingBlock:^(CSFeedChannel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

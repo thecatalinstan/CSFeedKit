@@ -13,9 +13,13 @@
 		ADD605DC1D4E708B00C6E41A /* CSFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = ADD605DA1D4E708B00C6E41A /* CSFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADD605DD1D4E708B00C6E41A /* CSFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD605DB1D4E708B00C6E41A /* CSFeed.m */; };
 		ADD605DF1D4E764800C6E41A /* CSFeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD605DE1D4E764800C6E41A /* CSFeedTests.m */; };
-		ADD605E71D4E7D9700C6E41A /* CSRSSFeedItem.h in Headers */ = {isa = PBXBuildFile; fileRef = ADD605E51D4E7D9700C6E41A /* CSRSSFeedItem.h */; };
+		ADD605E71D4E7D9700C6E41A /* CSRSSFeedItem.h in Headers */ = {isa = PBXBuildFile; fileRef = ADD605E51D4E7D9700C6E41A /* CSRSSFeedItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADD605E81D4E7D9700C6E41A /* CSRSSFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD605E61D4E7D9700C6E41A /* CSRSSFeedItem.m */; };
-		ADD605EA1D4E7EA500C6E41A /* CSRSSFeedItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD605E91D4E7EA500C6E41A /* CSRSSFeedItemTests.m */; };
+		ADD605F11D4E82E900C6E41A /* CSRSSFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = ADD605EE1D4E81EB00C6E41A /* CSRSSFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ADD605F21D4E82E900C6E41A /* CSRSSFeedChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = ADD605EB1D4E818D00C6E41A /* CSRSSFeedChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ADD605F41D4E83F000C6E41A /* CSRSSFeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD605F31D4E83F000C6E41A /* CSRSSFeedTests.m */; };
+		ADD605F51D4E855300C6E41A /* CSRSSFeedChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD605EC1D4E818D00C6E41A /* CSRSSFeedChannel.m */; };
+		ADD605F61D4E85B000C6E41A /* CSRSSFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD605EF1D4E81EB00C6E41A /* CSRSSFeed.m */; };
 		ADDD729D1D4D3CBF00864961 /* CSFeedItem.h in Headers */ = {isa = PBXBuildFile; fileRef = ADDD729B1D4D3CBF00864961 /* CSFeedItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADDD729E1D4D3CBF00864961 /* CSFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD729C1D4D3CBF00864961 /* CSFeedItem.m */; };
 		ADDD72A01D4D41E200864961 /* CSFeedItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD729F1D4D41E200864961 /* CSFeedItemTests.m */; };
@@ -42,7 +46,11 @@
 		ADD605DE1D4E764800C6E41A /* CSFeedTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedTests.m; sourceTree = "<group>"; };
 		ADD605E51D4E7D9700C6E41A /* CSRSSFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRSSFeedItem.h; sourceTree = "<group>"; };
 		ADD605E61D4E7D9700C6E41A /* CSRSSFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRSSFeedItem.m; sourceTree = "<group>"; };
-		ADD605E91D4E7EA500C6E41A /* CSRSSFeedItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRSSFeedItemTests.m; sourceTree = "<group>"; };
+		ADD605EB1D4E818D00C6E41A /* CSRSSFeedChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRSSFeedChannel.h; sourceTree = "<group>"; };
+		ADD605EC1D4E818D00C6E41A /* CSRSSFeedChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRSSFeedChannel.m; sourceTree = "<group>"; };
+		ADD605EE1D4E81EB00C6E41A /* CSRSSFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRSSFeed.h; sourceTree = "<group>"; };
+		ADD605EF1D4E81EB00C6E41A /* CSRSSFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRSSFeed.m; sourceTree = "<group>"; };
+		ADD605F31D4E83F000C6E41A /* CSRSSFeedTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRSSFeedTests.m; sourceTree = "<group>"; };
 		ADDD729B1D4D3CBF00864961 /* CSFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedItem.h; sourceTree = "<group>"; };
 		ADDD729C1D4D3CBF00864961 /* CSFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedItem.m; sourceTree = "<group>"; };
 		ADDD729F1D4D41E200864961 /* CSFeedItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedItemTests.m; sourceTree = "<group>"; };
@@ -75,6 +83,10 @@
 		ADD605E41D4E7D9700C6E41A /* RSS */ = {
 			isa = PBXGroup;
 			children = (
+				ADD605EE1D4E81EB00C6E41A /* CSRSSFeed.h */,
+				ADD605EF1D4E81EB00C6E41A /* CSRSSFeed.m */,
+				ADD605EB1D4E818D00C6E41A /* CSRSSFeedChannel.h */,
+				ADD605EC1D4E818D00C6E41A /* CSRSSFeedChannel.m */,
 				ADD605E51D4E7D9700C6E41A /* CSRSSFeedItem.h */,
 				ADD605E61D4E7D9700C6E41A /* CSRSSFeedItem.m */,
 			);
@@ -121,7 +133,7 @@
 				ADD605DE1D4E764800C6E41A /* CSFeedTests.m */,
 				ADD605D71D4E6A3D00C6E41A /* CSFeedChannelTests.m */,
 				ADDD729F1D4D41E200864961 /* CSFeedItemTests.m */,
-				ADD605E91D4E7EA500C6E41A /* CSRSSFeedItemTests.m */,
+				ADD605F31D4E83F000C6E41A /* CSRSSFeedTests.m */,
 				ADE5FFB71D4D37CA005C6E43 /* Info.plist */,
 			);
 			path = CSFeedKitTests;
@@ -134,11 +146,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADD605F21D4E82E900C6E41A /* CSRSSFeedChannel.h in Headers */,
 				ADD605DC1D4E708B00C6E41A /* CSFeed.h in Headers */,
 				ADD605E71D4E7D9700C6E41A /* CSRSSFeedItem.h in Headers */,
 				ADE5FFAA1D4D37CA005C6E43 /* CSFeedKit.h in Headers */,
 				ADDD729D1D4D3CBF00864961 /* CSFeedItem.h in Headers */,
 				ADD605D51D4E5FC100C6E41A /* CSFeedChannel.h in Headers */,
+				ADD605F11D4E82E900C6E41A /* CSRSSFeed.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +253,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD605DD1D4E708B00C6E41A /* CSFeed.m in Sources */,
+				ADD605F51D4E855300C6E41A /* CSRSSFeedChannel.m in Sources */,
+				ADD605F61D4E85B000C6E41A /* CSRSSFeed.m in Sources */,
 				ADDD729E1D4D3CBF00864961 /* CSFeedItem.m in Sources */,
 				ADD605D61D4E5FC100C6E41A /* CSFeedChannel.m in Sources */,
 				ADD605E81D4E7D9700C6E41A /* CSRSSFeedItem.m in Sources */,
@@ -250,9 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD605DF1D4E764800C6E41A /* CSFeedTests.m in Sources */,
+				ADD605F41D4E83F000C6E41A /* CSRSSFeedTests.m in Sources */,
 				ADDD72A01D4D41E200864961 /* CSFeedItemTests.m in Sources */,
 				ADD605D91D4E6B0B00C6E41A /* CSFeedChannelTests.m in Sources */,
-				ADD605EA1D4E7EA500C6E41A /* CSRSSFeedItemTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
