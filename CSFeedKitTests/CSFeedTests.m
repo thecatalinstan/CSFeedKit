@@ -28,13 +28,15 @@
 }
 
 - (void)testXMLElementNoThrow {
+    CSFeedItem * item = [[CSFeedItem alloc] initWithTitle:@"The title" link:@"http://catalinstan.com/the-feed" description:@"Lorem ipsum dolor ..."];
+
+    CSFeedChannel * channel = [[CSFeedChannel alloc] initWithTitle:@"The title" link:@"http://catalinstan.com/the-feed" description:@"Lorem ipsum dolor ..."];
+    [channel.items addObject:item];
+
     CSFeed * feed = [[CSFeed alloc] init];
+    [feed.channels addObject:channel];
     feed.version = @"1.0.0";
     feed.namespaces[@"cs"] = @"http://catalinstan.com/cs.dtd";
-    CSFeedChannel * channel = [[CSFeedChannel alloc] initWithTitle:@"The title" link:@"http://catalinstan.com/the-feed" description:@"Lorem ipsum dolor ..."];
-    CSFeedItem * item = [[CSFeedItem alloc] initWithTitle:@"The title" link:@"http://catalinstan.com/the-feed" description:@"Lorem ipsum dolor ..."];
-    [channel.items addObject:item];
-    [feed.channels addObject:channel];
 
     XCTAssertNotNil(feed);
     XCTAssertNoThrow(feed.XMLElement);
