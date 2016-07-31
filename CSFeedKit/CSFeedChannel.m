@@ -72,46 +72,44 @@
 
 - (NSXMLElement *)XMLElement {
 
-    NSXMLElement * xmlElement = [NSXMLElement elementWithName:@"channel"];
-    [xmlElement addChild:[NSXMLElement elementWithName:@"title" stringValue:self.title]];
-    [xmlElement addChild:[NSXMLElement elementWithName:@"link" stringValue:self.link]];
+    NSXMLElement * element = [NSXMLElement elementWithName:@"channel"];
+    [element addChild:[NSXMLElement elementWithName:@"title" stringValue:self.title]];
+    [element addChild:[NSXMLElement elementWithName:@"link" stringValue:self.link]];
 
     NSXMLElement * descElement = [NSXMLElement elementWithName:@"description"];
     NSXMLNode * cdataDescNode = [[NSXMLNode alloc] initWithKind:NSXMLTextKind options:NSXMLNodeIsCDATA];
     cdataDescNode.stringValue = self.channelDescription;
     [descElement addChild:cdataDescNode];
-    [xmlElement addChild:descElement];
+    [element addChild:descElement];
 
     if ( self.generator.length > 0 ) {
-        [xmlElement addChild:[NSXMLElement elementWithName:@"generator" stringValue:self.generator]];
+        [element addChild:[NSXMLElement elementWithName:@"generator" stringValue:self.generator]];
     }
 
     if ( self.lastBuildDate != nil ) {
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss Z"; //RFC2822-Format
         NSString *dateString = [formatter stringFromDate:self.lastBuildDate];
-        [xmlElement addChild:[NSXMLElement elementWithName:@"lastBuildDate" stringValue:dateString]];
+        [element addChild:[NSXMLElement elementWithName:@"lastBuildDate" stringValue:dateString]];
     }
 
     if ( self.language.length > 0 ) {
-        [xmlElement addChild:[NSXMLElement elementWithName:@"language" stringValue:self.language]];
+        [element addChild:[NSXMLElement elementWithName:@"language" stringValue:self.language]];
     }
 
     if ( self.ttl > 0 ) {
-        [xmlElement addChild:[NSXMLElement elementWithName:@"ttl" stringValue:@(self.ttl).stringValue]];
+        [element addChild:[NSXMLElement elementWithName:@"ttl" stringValue:@(self.ttl).stringValue]];
     }
 
     if ( self.category.length > 0 ) {
-        [xmlElement addChild:[NSXMLElement elementWithName:@"category" stringValue:self.category]];
+        [element addChild:[NSXMLElement elementWithName:@"category" stringValue:self.category]];
     }
 
     [self.items enumerateObjectsUsingBlock:^(CSFeedItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [xmlElement addChild:obj.XMLElement];
+        [element addChild:obj.XMLElement];
     }];
 
-    NSLog(@"%@", xmlElement.XMLString);
-    
-    return xmlElement;
+    return element;
 }
 
 @end

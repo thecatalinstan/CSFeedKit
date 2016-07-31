@@ -48,29 +48,27 @@
 }
 
 - (NSXMLElement *)XMLElement {
-    NSXMLElement * xmlElement = [NSXMLElement elementWithName:@"item"];
+    NSXMLElement * element = [NSXMLElement elementWithName:@"item"];
 
-    [xmlElement addChild:[NSXMLElement elementWithName:@"title" stringValue:self.title]];
-    [xmlElement addChild:[NSXMLElement elementWithName:@"link" stringValue:self.link]];
-    [xmlElement addChild:[NSXMLElement elementWithName:@"comments" stringValue:self.comments]];
+    [element addChild:[NSXMLElement elementWithName:@"title" stringValue:self.title]];
+    [element addChild:[NSXMLElement elementWithName:@"link" stringValue:self.link]];
+    [element addChild:[NSXMLElement elementWithName:@"comments" stringValue:self.comments]];
 
     NSXMLElement * GUIDElement = [NSXMLElement elementWithName:@"guid" stringValue:self.GUID];
     [GUIDElement setAttributesWithDictionary:@{@"isPermaLink" : self.GUIDIsPermaLink ? @"true" : @"false" }];
-    [xmlElement addChild:GUIDElement];
+    [element addChild:GUIDElement];
 
     NSXMLElement * descElement = [NSXMLElement elementWithName:@"description"];
     NSXMLNode * cdataDescNode = [[NSXMLNode alloc] initWithKind:NSXMLTextKind options:NSXMLNodeIsCDATA];
     cdataDescNode.stringValue = self.itemDescription;
     [descElement addChild:cdataDescNode];
-    [xmlElement addChild:descElement];
+    [element addChild:descElement];
 
     if ( self.info.length > 0 ) {
-        [xmlElement addChild:[NSXMLElement elementWithName:@"info" stringValue:self.info]];
+        [element addChild:[NSXMLElement elementWithName:@"info" stringValue:self.info]];
     }
 
-    NSLog(@"%@", xmlElement.XMLString);
-    
-    return xmlElement;
+    return element;
 }
 
 @end
