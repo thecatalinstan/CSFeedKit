@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ADD605D51D4E5FC100C6E41A /* CSFeedChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = ADD605D31D4E5FC100C6E41A /* CSFeedChannel.h */; };
 		ADD605D61D4E5FC100C6E41A /* CSFeedChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD605D41D4E5FC100C6E41A /* CSFeedChannel.m */; };
+		ADD605D91D4E6B0B00C6E41A /* CSFeedChannelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD605D71D4E6A3D00C6E41A /* CSFeedChannelTests.m */; };
 		ADDD729D1D4D3CBF00864961 /* CSFeedItem.h in Headers */ = {isa = PBXBuildFile; fileRef = ADDD729B1D4D3CBF00864961 /* CSFeedItem.h */; };
 		ADDD729E1D4D3CBF00864961 /* CSFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD729C1D4D3CBF00864961 /* CSFeedItem.m */; };
 		ADDD72A01D4D41E200864961 /* CSFeedItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD729F1D4D41E200864961 /* CSFeedItemTests.m */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		ADD605D31D4E5FC100C6E41A /* CSFeedChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedChannel.h; sourceTree = "<group>"; };
 		ADD605D41D4E5FC100C6E41A /* CSFeedChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedChannel.m; sourceTree = "<group>"; };
+		ADD605D71D4E6A3D00C6E41A /* CSFeedChannelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedChannelTests.m; sourceTree = "<group>"; };
 		ADDD729B1D4D3CBF00864961 /* CSFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedItem.h; sourceTree = "<group>"; };
 		ADDD729C1D4D3CBF00864961 /* CSFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedItem.m; sourceTree = "<group>"; };
 		ADDD729F1D4D41E200864961 /* CSFeedItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedItemTests.m; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				ADDD729F1D4D41E200864961 /* CSFeedItemTests.m */,
+				ADD605D71D4E6A3D00C6E41A /* CSFeedChannelTests.m */,
 				ADE5FFB71D4D37CA005C6E43 /* Info.plist */,
 			);
 			path = CSFeedKitTests;
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADDD72A01D4D41E200864961 /* CSFeedItemTests.m in Sources */,
+				ADD605D91D4E6B0B00C6E41A /* CSFeedChannelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

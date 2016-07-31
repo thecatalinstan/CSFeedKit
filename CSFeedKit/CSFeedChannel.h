@@ -8,28 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
+@class CSFeedItem;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CSFeedChannel : NSObject
 
-//public $PubDate;
-//public $Generator;
-//public $Language;
-//@property (nonatomic, strong) NSString * title;
-//@property (nonatomic, strong) NSString * link;
-//@property (nonatomic, strong) NSString * contents;
-//@property (nonatomic, strong, nullable) NSString * comments;
-//@property (nonatomic, strong, nullable) NSString * GUID;
-//@property (nonatomic, assign) BOOL GUIDIsPermaLink;
-//@property (nonatomic, strong, nullable) NSString * info;
-//
-//+ (instancetype)feedItemWithTitle:(NSString *)title link:(NSString *)link contents:(NSString *)contents;
-//
-//- (instancetype)initWithTitle:(NSString *)title link:(NSString *)link contents:(NSString *)contents NS_DESIGNATED_INITIALIZER;
-//- (instancetype)initWithXMLElement:(NSXMLElement *)element;
-//- (instancetype)initWithXMLString:(NSString *)string error:(NSError * _Nullable __autoreleasing * _Nullable)error;
-//
-//- (NSXMLElement *)XMLElement;
+@property (nonatomic, strong) NSString * title;
+@property (nonatomic, strong) NSString * link;
+@property (nonatomic, strong) NSString * channelDescription;
+@property (nonatomic, strong) NSDate * lastBuildDate;
+@property (nonatomic, strong) NSString * generator;
+@property (nonatomic, strong) NSString * language;
+@property (nonatomic, strong) NSMutableArray<CSFeedItem *> * items;
+@property (nonatomic) NSUInteger ttl;
+@property (nonatomic, strong) NSString * category;
+
+- (instancetype)initWithTitle:(NSString *)title link:(NSString *)link description:(NSString *)description NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithXMLElement:(NSXMLElement *)element;
+- (instancetype)initWithXMLString:(NSString *)string error:(NSError * _Nullable __autoreleasing * _Nullable)error;
+
+- (NSXMLElement *)XMLElement;
 
 @end
 

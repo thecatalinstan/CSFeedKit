@@ -26,7 +26,7 @@
 }
 
 - (void)testXMLElementNoThrow {
-    CSFeedItem * item = [CSFeedItem feedItemWithTitle:@"The title" link:@"http://catalinstan.com/the-feed" contents:@"Lorem ipsum dolor ..."];
+    CSFeedItem * item = [[CSFeedItem alloc] initWithTitle:@"The title" link:@"http://catalinstan.com/the-feed" description:@"Lorem ipsum dolor ..."];
     XCTAssertNotNil(item);
     XCTAssertNoThrow(item.XMLElement);
 }

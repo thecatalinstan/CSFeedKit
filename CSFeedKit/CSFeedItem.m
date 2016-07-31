@@ -29,22 +29,18 @@
 - (instancetype)initWithXMLElement:(NSXMLElement *)element {
     NSString * title = [element elementsForName:@"title"].firstObject.stringValue;
     NSString * link = [element elementsForName:@"link"].firstObject.stringValue;
-    NSString * comments = [element elementsForName:@"comments"].firstObject.stringValue;
-
-    NSXMLElement * GUIDElement = [element elementsForName:@"guid"].firstObject;
-    NSString * guid = GUIDElement.stringValue;
-    BOOL guidIsPermalink = [[GUIDElement attributeForName:@"isPermaLink"].stringValue isEqualToString:@"true"];
-
     NSString * description = [element elementsForName:@"description"].firstObject.children.firstObject.stringValue;
-    NSString * info = [element elementsForName:@"info"].firstObject.stringValue;
 
-    CSFeedItem * item = [self initWithTitle:title link:link description:description];
-    item.comments = comments;
-    item.GUID = guid;
-    item.GUIDIsPermaLink = guidIsPermalink;
-    item.info = info;
+    self = [self initWithTitle:title link:link description:description];
+    if ( self != nil ) {
+        self.comments = [element elementsForName:@"comments"].firstObject.stringValue;
+        self.info = [element elementsForName:@"info"].firstObject.stringValue;
 
-    return item;
+        NSXMLElement * GUIDElement = [element elementsForName:@"guid"].firstObject;
+        self.GUID = GUIDElement.stringValue;
+        self.GUIDIsPermaLink = [[GUIDElement attributeForName:@"isPermaLink"].stringValue isEqualToString:@"true"];
+    }
+    return self;
 }
 
 - (instancetype)initWithXMLString:(NSString *)string error:(NSError * _Nullable __autoreleasing * _Nullable)error {
@@ -64,7 +60,7 @@
 
     NSXMLElement * descElement = [NSXMLElement elementWithName:@"description"];
     NSXMLNode * cdataDescNode = [[NSXMLNode alloc] initWithKind:NSXMLTextKind options:NSXMLNodeIsCDATA];
-    cdataDescNode.stringValue = self.description;
+    cdataDescNode.stringValue = self.itemDescription;
     [descElement addChild:cdataDescNode];
     [xmlElement addChild:descElement];
 
