@@ -15,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString * title;
 @property (nonatomic, strong) NSString * link;
 @property (nonatomic, strong) NSString * itemDescription;
-@property (nonatomic, strong, nullable) NSString * comments;
-@property (nonatomic, strong, nullable) NSString * GUID;
+@property (nonatomic, strong) NSString * GUID;
 @property (nonatomic, assign) BOOL GUIDIsPermaLink;
+@property (nonatomic, strong, nullable) NSString * comments;
 @property (nonatomic, strong, nullable) NSString * info;
 
 - (instancetype)initWithTitle:(NSString *)title link:(NSString *)link description:(NSString *)description NS_DESIGNATED_INITIALIZER;

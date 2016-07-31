@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CSFeed : NSObject
 
-@property (nonatomic, strong) NSString * version;
+@property (nonatomic, strong, nullable) NSString * version;
 @property (nonatomic, strong) NSMutableDictionary<NSString *, NSString *> * namespaces;
 @property (nonatomic, strong) NSMutableArray<CSFeedChannel *> * channels;
 @property (nonatomic, strong) NSString * nodeName;

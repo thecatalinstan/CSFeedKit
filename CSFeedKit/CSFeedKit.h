@@ -6,14 +6,13 @@
 //  Copyright © 2016 Cătălin Stan. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
-//! Project version number for CSFeedKit.
 FOUNDATION_EXPORT double CSFeedKitVersionNumber;
-
-//! Project version string for CSFeedKit.
 FOUNDATION_EXPORT const unsigned char CSFeedKitVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <CSFeedKit/PublicHeader.h>
+#import <CSFeedKit/CSFeed.h>
+#import <CSFeedKit/CSFeedChannel.h>
+#import <CSFeedKit/CSFeedItem.h>
 
 

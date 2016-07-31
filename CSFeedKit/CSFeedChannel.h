@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString * language;
 @property (nonatomic, strong) NSMutableArray<CSFeedItem *> * items;
 @property (nonatomic) NSUInteger ttl;
-@property (nonatomic, strong) NSString * category;
+@property (nonatomic, strong, nullable) NSString * category;
 
 - (instancetype)initWithTitle:(NSString *)title link:(NSString *)link description:(NSString *)description NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithXMLElement:(NSXMLElement *)element;
