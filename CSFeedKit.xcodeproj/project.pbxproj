@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ADD605D51D4E5FC100C6E41A /* CSFeedChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = ADD605D31D4E5FC100C6E41A /* CSFeedChannel.h */; };
+		ADD605D61D4E5FC100C6E41A /* CSFeedChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD605D41D4E5FC100C6E41A /* CSFeedChannel.m */; };
+		ADDD729D1D4D3CBF00864961 /* CSFeedItem.h in Headers */ = {isa = PBXBuildFile; fileRef = ADDD729B1D4D3CBF00864961 /* CSFeedItem.h */; };
+		ADDD729E1D4D3CBF00864961 /* CSFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD729C1D4D3CBF00864961 /* CSFeedItem.m */; };
+		ADDD72A01D4D41E200864961 /* CSFeedItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD729F1D4D41E200864961 /* CSFeedItemTests.m */; };
 		ADE5FFAA1D4D37CA005C6E43 /* CSFeedKit.h in Headers */ = {isa = PBXBuildFile; fileRef = ADE5FFA91D4D37CA005C6E43 /* CSFeedKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADE5FFB11D4D37CA005C6E43 /* CSFeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE5FFA61D4D37CA005C6E43 /* CSFeedKit.framework */; };
-		ADE5FFB61D4D37CA005C6E43 /* CSFeedKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE5FFB51D4D37CA005C6E43 /* CSFeedKitTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,11 +27,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ADD605D31D4E5FC100C6E41A /* CSFeedChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedChannel.h; sourceTree = "<group>"; };
+		ADD605D41D4E5FC100C6E41A /* CSFeedChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedChannel.m; sourceTree = "<group>"; };
+		ADDD729B1D4D3CBF00864961 /* CSFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedItem.h; sourceTree = "<group>"; };
+		ADDD729C1D4D3CBF00864961 /* CSFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedItem.m; sourceTree = "<group>"; };
+		ADDD729F1D4D41E200864961 /* CSFeedItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedItemTests.m; sourceTree = "<group>"; };
 		ADE5FFA61D4D37CA005C6E43 /* CSFeedKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSFeedKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE5FFA91D4D37CA005C6E43 /* CSFeedKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSFeedKit.h; sourceTree = "<group>"; };
 		ADE5FFAB1D4D37CA005C6E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ADE5FFB01D4D37CA005C6E43 /* CSFeedKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSFeedKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADE5FFB51D4D37CA005C6E43 /* CSFeedKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSFeedKitTests.m; sourceTree = "<group>"; };
+		ADE5FFB01D4D37CA005C6E43 /* CSFeedKitTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CSFeedKitTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE5FFB71D4D37CA005C6E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				ADE5FFA61D4D37CA005C6E43 /* CSFeedKit.framework */,
-				ADE5FFB01D4D37CA005C6E43 /* CSFeedKitTests.xctest */,
+				ADE5FFB01D4D37CA005C6E43 /* CSFeedKitTests-macOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				ADE5FFA91D4D37CA005C6E43 /* CSFeedKit.h */,
+				ADDD729B1D4D3CBF00864961 /* CSFeedItem.h */,
+				ADDD729C1D4D3CBF00864961 /* CSFeedItem.m */,
+				ADD605D31D4E5FC100C6E41A /* CSFeedChannel.h */,
+				ADD605D41D4E5FC100C6E41A /* CSFeedChannel.m */,
 				ADE5FFAB1D4D37CA005C6E43 /* Info.plist */,
 			);
 			path = CSFeedKit;
@@ -80,7 +92,7 @@
 		ADE5FFB41D4D37CA005C6E43 /* CSFeedKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				ADE5FFB51D4D37CA005C6E43 /* CSFeedKitTests.m */,
+				ADDD729F1D4D41E200864961 /* CSFeedItemTests.m */,
 				ADE5FFB71D4D37CA005C6E43 /* Info.plist */,
 			);
 			path = CSFeedKitTests;
@@ -94,15 +106,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADE5FFAA1D4D37CA005C6E43 /* CSFeedKit.h in Headers */,
+				ADDD729D1D4D3CBF00864961 /* CSFeedItem.h in Headers */,
+				ADD605D51D4E5FC100C6E41A /* CSFeedChannel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		ADE5FFA51D4D37CA005C6E43 /* CSFeedKit */ = {
+		ADE5FFA51D4D37CA005C6E43 /* CSFeedKit-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADE5FFBA1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKit" */;
+			buildConfigurationList = ADE5FFBA1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKit-macOS" */;
 			buildPhases = (
 				ADE5FFA11D4D37CA005C6E43 /* Sources */,
 				ADE5FFA21D4D37CA005C6E43 /* Frameworks */,
@@ -113,14 +127,14 @@
 			);
 			dependencies = (
 			);
-			name = CSFeedKit;
+			name = "CSFeedKit-macOS";
 			productName = CSFeedKit;
 			productReference = ADE5FFA61D4D37CA005C6E43 /* CSFeedKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		ADE5FFAF1D4D37CA005C6E43 /* CSFeedKitTests */ = {
+		ADE5FFAF1D4D37CA005C6E43 /* CSFeedKitTests-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADE5FFBD1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKitTests" */;
+			buildConfigurationList = ADE5FFBD1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKitTests-macOS" */;
 			buildPhases = (
 				ADE5FFAC1D4D37CA005C6E43 /* Sources */,
 				ADE5FFAD1D4D37CA005C6E43 /* Frameworks */,
@@ -131,9 +145,9 @@
 			dependencies = (
 				ADE5FFB31D4D37CA005C6E43 /* PBXTargetDependency */,
 			);
-			name = CSFeedKitTests;
+			name = "CSFeedKitTests-macOS";
 			productName = CSFeedKitTests;
-			productReference = ADE5FFB01D4D37CA005C6E43 /* CSFeedKitTests.xctest */;
+			productReference = ADE5FFB01D4D37CA005C6E43 /* CSFeedKitTests-macOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -165,8 +179,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ADE5FFA51D4D37CA005C6E43 /* CSFeedKit */,
-				ADE5FFAF1D4D37CA005C6E43 /* CSFeedKitTests */,
+				ADE5FFA51D4D37CA005C6E43 /* CSFeedKit-macOS */,
+				ADE5FFAF1D4D37CA005C6E43 /* CSFeedKitTests-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -193,6 +207,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADDD729E1D4D3CBF00864961 /* CSFeedItem.m in Sources */,
+				ADD605D61D4E5FC100C6E41A /* CSFeedChannel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADE5FFB61D4D37CA005C6E43 /* CSFeedKitTests.m in Sources */,
+				ADDD72A01D4D41E200864961 /* CSFeedItemTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +225,7 @@
 /* Begin PBXTargetDependency section */
 		ADE5FFB31D4D37CA005C6E43 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ADE5FFA51D4D37CA005C6E43 /* CSFeedKit */;
+			target = ADE5FFA51D4D37CA005C6E43 /* CSFeedKit-macOS */;
 			targetProxy = ADE5FFB21D4D37CA005C6E43 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -256,6 +272,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = CSFeedKit;
+				PRODUCT_NAME = CSFeedKit;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -296,6 +314,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_MODULE_NAME = CSFeedKit;
+				PRODUCT_NAME = CSFeedKit;
 				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -315,7 +335,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.catalinstan.CSFeedKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -333,7 +352,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.catalinstan.CSFeedKit;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -372,21 +390,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADE5FFBA1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKit" */ = {
+		ADE5FFBA1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKit-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADE5FFBB1D4D37CA005C6E43 /* Debug */,
 				ADE5FFBC1D4D37CA005C6E43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		ADE5FFBD1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKitTests" */ = {
+		ADE5FFBD1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKitTests-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADE5FFBE1D4D37CA005C6E43 /* Debug */,
 				ADE5FFBF1D4D37CA005C6E43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
