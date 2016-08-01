@@ -31,39 +31,21 @@ do {
 
     print ( feed.XMLElement().XMLStringWithOptions(NSXMLNodePrettyPrint))
 } catch {
+    print(error)
 }
 
 
 // Parse a feed from the web
-var semaphore = dispatch_semaphore_create(0)
+do {
+    let xmlString = try NSString.init(contentsOfURL: NSURL(string: "https://news.ycombinator.com/rss")!, encoding: NSUTF8StringEncoding)
+    let feed = try CSRSSFeed.init(XMLString: xmlString as String)
+    let channel = feed.channels.firstObject as! CSRSSFeedChannel
 
-let feedURL = NSURL(string: "https://news.ycombinator.com/rss")
-let request:NSMutableURLRequest = NSMutableURLRequest(URL: feedURL!)
-request.HTTPMethod = "GET"
-let task:NSURLSessionDataTask = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) in
-    if ( error != nil ) {
-        print(error)
-        dispatch_semaphore_signal(semaphore)
-        return
+    print("channel: \(channel.title)")
+    for (_, item) in channel.items.enumerate() {
+        var rssItem = item as! CSRSSFeedItem
+        print(" * \(rssItem.title) (\(rssItem.link))")
     }
-
-    do {
-        let xmlString = NSString.init(data: data!, encoding: NSUTF8StringEncoding)
-        let feed = try CSRSSFeed.init(XMLString: xmlString! as String)
-        let channel:CSRSSFeedChannel = feed.channels.firstObject as! CSRSSFeedChannel
-
-        print("channel: \(channel.title)")
-        for (_, item) in channel.items.enumerate() {
-            var rssItem = item as! CSRSSFeedItem
-            print(" * \(rssItem.title) (\(rssItem.link))")
-        }
-    } catch {
-        print(error)
-    }
-
-    dispatch_semaphore_signal(semaphore)
+} catch {
+    print(error)
 }
-
-task.resume()
-dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER )
-
