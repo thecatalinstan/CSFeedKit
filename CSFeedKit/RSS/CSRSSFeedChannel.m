@@ -14,6 +14,7 @@
 - (instancetype)initWithXMLElement:(NSXMLElement *)element {
     self = [super initWithXMLElement:element];
     if ( self != nil ) {
+        [self.items removeAllObjects];
         NSArray<NSXMLElement *> * items = [element elementsForName:@"item"];
         [items enumerateObjectsUsingBlock:^(NSXMLElement * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [self.items addObject:[[CSRSSFeedItem alloc] initWithXMLElement:obj]];
