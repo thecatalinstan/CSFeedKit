@@ -99,7 +99,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return A new `CSFeedChannel`
  */
-- (instancetype)initWithXMLString:(NSString *)string error:(NSError * _Nullable __autoreleasing * _Nullable)error;
+- (nullable instancetype)initWithXMLString:(NSString *)string error:(NSError * _Nullable __autoreleasing * _Nullable)error;
 
 /**
  *  @name Generating XML
