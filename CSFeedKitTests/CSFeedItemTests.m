@@ -32,7 +32,7 @@
 }
 
 - (void)testInitWithXMLString {
-    NSString * XMLString = @"<item><title>The title</title><link>http://catalinstan.com/the-feed</link><comments></comments><guid isPermaLink=\"true\">http://catalinstan.com/the-feed</guid><description><![CDATA[Lorem ipsum dolor ...]]></description></item>";
+    NSString * XMLString = @"<item><title>The title</title><link>http://catalinstan.com/the-feed</link><pubDate>Wed, 24 Aug 2016 08:16:29 +0000</pubDate><comments></comments><guid isPermaLink=\"true\">http://catalinstan.com/the-feed</guid><description><![CDATA[Lorem ipsum dolor ...]]></description></item>";
 
     NSError * error;
     CSFeedItem * item;

@@ -52,6 +52,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, nullable) NSString * info;
 
 /**
+ *  The date when the item was published
+ */
+@property (nonatomic, strong) NSDate * pubDate;
+
+/**
  *  @name Creating a new `CSFeedItem`
  */
 
