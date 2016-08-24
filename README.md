@@ -60,7 +60,7 @@ do {
 	// Print the items
 	for (_, item) in channel.items.enumerate() {
 		var rssItem = item as! CSRSSFeedItem
-    print(" * \(rssItem.title) (\(rssItem.link))")
+    		print(" * \(rssItem.pubDate) - \(rssItem.title) (\(rssItem.link))")
 	}
 } catch {
 	print(error)
