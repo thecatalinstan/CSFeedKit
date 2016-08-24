@@ -6,6 +6,16 @@ This file includes all notable changes to CSFeedKit.
 
 ---
 
+## [0.2.1](https://github.com/thecatalinstan/CSFeedKit/releases/tag/0.2.1) (08/24/2016)
+
+**Released on Wednesday, August 24, 2016**.
+
+Hotfix release.
+
+#### Fixed
+
+The value of the `pubDate` property of `CSFeedChannel` was mistalenly being exported as `lastBuildDate`. [`30b1bf6`](https://github.com/thecatalinstan/CSFeedKit/commit/30b1bf6cac48c2789d5bfd6ee8ff32c868e51a6d).
+
 ## [0.2.0](https://github.com/thecatalinstan/CSFeedKit/releases/tag/0.2.0) (08/24/2016)
 
 **Released on Wednesday, August 24, 2016**.

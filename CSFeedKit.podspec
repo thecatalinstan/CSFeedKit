@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name                        =  "CSFeedKit"
-  s.version                     =  "0.2.0"
+  s.version                     =  "0.2.1"
   s.license                     =  "MIT"
 
   s.summary                     =  "An RSS feed generator and parser for macOS. Swift and Objective-C compatible."
