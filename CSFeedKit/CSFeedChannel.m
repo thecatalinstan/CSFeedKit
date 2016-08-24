@@ -95,7 +95,7 @@
     [element addChild:[NSXMLElement elementWithName:@"lastBuildDate" stringValue:lastBuildDateString]];
 
     NSString *pubDateString = [[CSRFC2822DateFormatter sharedInstance] stringFromDate:self.pubDate];
-    [element addChild:[NSXMLElement elementWithName:@"lastBuildDate" stringValue:pubDateString]];
+    [element addChild:[NSXMLElement elementWithName:@"pubDate" stringValue:pubDateString]];
 
     if ( self.language.length > 0 ) {
         [element addChild:[NSXMLElement elementWithName:@"language" stringValue:self.language]];
