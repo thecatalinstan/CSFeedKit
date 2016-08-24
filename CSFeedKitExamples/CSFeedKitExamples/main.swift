@@ -22,7 +22,15 @@ do {
     for (_, path) in files.enumerate() {
         var link:NSURL = NSURL.fileURLWithPath(path)
         let item = CSRSSFeedItem(title: link.lastPathComponent! , link: link.absoluteString, description: "Description of \(link.lastPathComponent!)");
-        item.creator = NSFullUserName()
+        do {
+            let attributes = try NSFileManager.defaultManager().attributesOfItemAtPath("\(homePath)/\(path)")
+            print(attributes)
+            item.pubDate = attributes[NSFileCreationDate] as! NSDate
+            item.creator = attributes[NSFileOwnerAccountName] as? String
+        } catch {
+            item.pubDate = NSDate.distantPast()
+            item.creator = NSFullUserName()
+        }
         channel.items.addObject(item)
     }
 
@@ -41,10 +49,10 @@ do {
     let feed = try CSRSSFeed.init(XMLString: xmlString as String)
     let channel = feed.channels.firstObject as! CSRSSFeedChannel
 
-    print("channel: \(channel.title)")
+    print("channel: \(channel.title) - \(channel.pubDate)")
     for (_, item) in channel.items.enumerate() {
         var rssItem = item as! CSRSSFeedItem
-        print(" * \(rssItem.title) (\(rssItem.link))")
+        print(" * \(rssItem.pubDate) - \(rssItem.title) (\(rssItem.link))")
     }
 } catch {
     print(error)

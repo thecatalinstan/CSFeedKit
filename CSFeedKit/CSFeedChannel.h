@@ -39,6 +39,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSDate * lastBuildDate;
 
 /**
+ *  The date when the channel was published
+ */
+@property (nonatomic, strong) NSDate * pubDate;
+
+/**
  *  The generator of the channel
  */
 @property (nonatomic, strong) NSString * generator;

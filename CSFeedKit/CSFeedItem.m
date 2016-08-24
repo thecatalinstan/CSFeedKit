@@ -7,6 +7,7 @@
 //
 
 #import "CSFeedItem.h"
+#import "CSRFC2822DateFormatter.h"
 
 @implementation CSFeedItem
 
@@ -22,6 +23,7 @@
         self.itemDescription = description;
         self.GUID = self.link;
         self.GUIDIsPermaLink = YES;
+        self.pubDate = [NSDate date];
     }
     return self;
 }
@@ -39,6 +41,11 @@
         NSXMLElement * GUIDElement = [element elementsForName:@"guid"].firstObject;
         self.GUID = GUIDElement.stringValue;
         self.GUIDIsPermaLink = [[GUIDElement attributeForName:@"isPermaLink"].stringValue isEqualToString:@"true"];
+
+        NSXMLElement * dateElement = [element elementsForName:@"pubDate"].firstObject;
+        if ( dateElement ) {
+            self.pubDate = [[CSRFC2822DateFormatter sharedInstance] dateFromString:dateElement.stringValue];
+        }
     }
     return self;
 }
@@ -57,6 +64,9 @@
     NSXMLElement * GUIDElement = [NSXMLElement elementWithName:@"guid" stringValue:self.GUID];
     [GUIDElement setAttributesWithDictionary:@{@"isPermaLink" : self.GUIDIsPermaLink ? @"true" : @"false" }];
     [element addChild:GUIDElement];
+
+    NSString *dateString = [[CSRFC2822DateFormatter sharedInstance] stringFromDate:self.pubDate];
+    [element addChild:[NSXMLElement elementWithName:@"pubDate" stringValue:dateString]];
 
     NSXMLElement * descElement = [NSXMLElement elementWithName:@"description"];
     NSXMLNode * cdataDescNode = [[NSXMLNode alloc] initWithKind:NSXMLTextKind options:NSXMLNodeIsCDATA];

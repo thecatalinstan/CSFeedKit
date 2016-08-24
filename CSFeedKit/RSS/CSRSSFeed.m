@@ -12,12 +12,13 @@
 @implementation CSRSSFeed
 
 - (instancetype)init {
-    return [self initWithNodeName:nil];
+    return [self initWithNodeName:@"rss"];
 }
 
 - (instancetype)initWithNodeName:(NSString *)nodeName {
     self = [super initWithNodeName:nodeName];
     if ( self != nil ) {
+        self.nodeName = nodeName ? : @"rss";
         self.namespaces[@"content"] = @"http://purl.org/rss/1.0/modules/content/";
         self.namespaces[@"wfw"] = @"http://wellformedweb.org/CommentAPI/";
         self.namespaces[@"dc"] = @"http://purl.org/dc/elements/1.1/";

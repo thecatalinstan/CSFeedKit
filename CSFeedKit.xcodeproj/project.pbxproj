@@ -25,6 +25,8 @@
 		ADDD72A01D4D41E200864961 /* CSFeedItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADDD729F1D4D41E200864961 /* CSFeedItemTests.m */; };
 		ADE5FFAA1D4D37CA005C6E43 /* CSFeedKit.h in Headers */ = {isa = PBXBuildFile; fileRef = ADE5FFA91D4D37CA005C6E43 /* CSFeedKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADE5FFB11D4D37CA005C6E43 /* CSFeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE5FFA61D4D37CA005C6E43 /* CSFeedKit.framework */; };
+		ADEE842F1D6D9EB200AEB513 /* CSRFC2822DateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = ADEE842D1D6D9EB200AEB513 /* CSRFC2822DateFormatter.h */; };
+		ADEE84301D6D9EB200AEB513 /* CSRFC2822DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = ADEE842E1D6D9EB200AEB513 /* CSRFC2822DateFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		ADE5FFAB1D4D37CA005C6E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADE5FFB01D4D37CA005C6E43 /* CSFeedKitTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CSFeedKitTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE5FFB71D4D37CA005C6E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADEE842D1D6D9EB200AEB513 /* CSRFC2822DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRFC2822DateFormatter.h; sourceTree = "<group>"; };
+		ADEE842E1D6D9EB200AEB513 /* CSRFC2822DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRFC2822DateFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 				ADD605D41D4E5FC100C6E41A /* CSFeedChannel.m */,
 				ADDD729B1D4D3CBF00864961 /* CSFeedItem.h */,
 				ADDD729C1D4D3CBF00864961 /* CSFeedItem.m */,
+				ADEE842D1D6D9EB200AEB513 /* CSRFC2822DateFormatter.h */,
+				ADEE842E1D6D9EB200AEB513 /* CSRFC2822DateFormatter.m */,
 				ADE5FFAB1D4D37CA005C6E43 /* Info.plist */,
 			);
 			path = CSFeedKit;
@@ -153,6 +159,7 @@
 				ADDD729D1D4D3CBF00864961 /* CSFeedItem.h in Headers */,
 				ADD605D51D4E5FC100C6E41A /* CSFeedChannel.h in Headers */,
 				ADD605F11D4E82E900C6E41A /* CSRSSFeed.h in Headers */,
+				ADEE842F1D6D9EB200AEB513 /* CSRFC2822DateFormatter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +263,7 @@
 				ADD605F51D4E855300C6E41A /* CSRSSFeedChannel.m in Sources */,
 				ADD605F61D4E85B000C6E41A /* CSRSSFeed.m in Sources */,
 				ADDD729E1D4D3CBF00864961 /* CSFeedItem.m in Sources */,
+				ADEE84301D6D9EB200AEB513 /* CSRFC2822DateFormatter.m in Sources */,
 				ADD605D61D4E5FC100C6E41A /* CSFeedChannel.m in Sources */,
 				ADD605E81D4E7D9700C6E41A /* CSRSSFeedItem.m in Sources */,
 			);
