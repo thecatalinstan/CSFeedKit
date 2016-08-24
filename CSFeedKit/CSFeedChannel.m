@@ -8,6 +8,7 @@
 
 #import "CSFeedChannel.h"
 #import "CSFeedItem.h"
+#import "CSRFC2822DateFormatter.h"
 
 @implementation CSFeedChannel
 
@@ -53,9 +54,7 @@
 
         NSXMLElement * dateElement = [element elementsForName:@"lastBuildDate"].firstObject;
         if ( dateElement ) {
-            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-            formatter.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss Z"; //RFC2822-Format
-            self.lastBuildDate = [formatter dateFromString:dateElement.stringValue];
+            self.lastBuildDate = [[CSRFC2822DateFormatter sharedInstance] dateFromString:dateElement.stringValue];
         }
 
         NSArray<NSXMLElement *> * items = [element elementsForName:@"item"];
@@ -87,9 +86,7 @@
     }
 
     if ( self.lastBuildDate != nil ) {
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        formatter.dateFormat = @"EEE, dd MMM yyyy HH:mm:ss Z"; //RFC2822-Format
-        NSString *dateString = [formatter stringFromDate:self.lastBuildDate];
+        NSString *dateString = [[CSRFC2822DateFormatter sharedInstance] stringFromDate:self.lastBuildDate];
         [element addChild:[NSXMLElement elementWithName:@"lastBuildDate" stringValue:dateString]];
     }
 
