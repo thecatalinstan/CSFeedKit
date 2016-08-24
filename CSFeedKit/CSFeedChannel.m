@@ -27,6 +27,7 @@
         NSBundle * bundle = [NSBundle mainBundle];
         self.generator = [NSString stringWithFormat:@"%@, v%@ build %@", bundle.bundleIdentifier, [bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [bundle objectForInfoDictionaryKey:@"CFBundleVersion"]];
         self.lastBuildDate = [NSDate date];
+        self.pubDate = [NSDate date];
         self.language = [NSLocale preferredLanguages].firstObject;
 
         self.ttl = 3600;
@@ -52,9 +53,14 @@
             self.ttl = [formatter numberFromString:ttlElement.stringValue].integerValue;
         }
 
-        NSXMLElement * dateElement = [element elementsForName:@"lastBuildDate"].firstObject;
-        if ( dateElement ) {
-            self.lastBuildDate = [[CSRFC2822DateFormatter sharedInstance] dateFromString:dateElement.stringValue];
+        NSXMLElement * lastBuildDateElement = [element elementsForName:@"lastBuildDate"].firstObject;
+        if ( lastBuildDateElement ) {
+            self.lastBuildDate = [[CSRFC2822DateFormatter sharedInstance] dateFromString:lastBuildDateElement.stringValue];
+        }
+
+        NSXMLElement * pubDateElement = [element elementsForName:@"pubDate"].firstObject;
+        if ( pubDateElement ) {
+            self.pubDate = [[CSRFC2822DateFormatter sharedInstance] dateFromString:pubDateElement.stringValue];
         }
 
         NSArray<NSXMLElement *> * items = [element elementsForName:@"item"];
@@ -85,10 +91,11 @@
         [element addChild:[NSXMLElement elementWithName:@"generator" stringValue:self.generator]];
     }
 
-    if ( self.lastBuildDate != nil ) {
-        NSString *dateString = [[CSRFC2822DateFormatter sharedInstance] stringFromDate:self.lastBuildDate];
-        [element addChild:[NSXMLElement elementWithName:@"lastBuildDate" stringValue:dateString]];
-    }
+    NSString *lastBuildDateString = [[CSRFC2822DateFormatter sharedInstance] stringFromDate:self.lastBuildDate];
+    [element addChild:[NSXMLElement elementWithName:@"lastBuildDate" stringValue:lastBuildDateString]];
+
+    NSString *pubDateString = [[CSRFC2822DateFormatter sharedInstance] stringFromDate:self.pubDate];
+    [element addChild:[NSXMLElement elementWithName:@"lastBuildDate" stringValue:pubDateString]];
 
     if ( self.language.length > 0 ) {
         [element addChild:[NSXMLElement elementWithName:@"language" stringValue:self.language]];

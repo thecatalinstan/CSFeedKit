@@ -37,7 +37,7 @@
 }
 
 - (void)testInitWithXMLString {
-    NSString * XMLString = @"<channel><title>The title</title><link>http://catalinstan.com/the-feed</link><description><![CDATA[Lorem ipsum dolor ...]]></description><generator>(null), v(null) build (null)</generator><lastBuildDate>Sun, 31 Jul 2016 19:23:31 +0200</lastBuildDate><language>en</language><ttl>3600</ttl><item><title>The title</title><link>http://catalinstan.com/the-feed</link><comments></comments><guid isPermaLink=\"true\">http://catalinstan.com/the-feed</guid><description><![CDATA[Lorem ipsum dolor ...]]></description></item></channel>";
+    NSString * XMLString = @"<channel><title>The title</title><link>http://catalinstan.com/the-feed</link><description><![CDATA[Lorem ipsum dolor ...]]></description><generator>(null), v(null) build (null)</generator><pubDate>Wed, 24 Aug 2016 08:16:29 +0000</pubDate><lastBuildDate>Sun, 31 Jul 2016 19:23:31 +0200</lastBuildDate><language>en</language><ttl>3600</ttl><item><title>The title</title><link>http://catalinstan.com/the-feed</link><comments></comments><guid isPermaLink=\"true\">http://catalinstan.com/the-feed</guid><description><![CDATA[Lorem ipsum dolor ...]]></description></item></channel>";
     
     NSError * error;
     CSFeedChannel * channel;
