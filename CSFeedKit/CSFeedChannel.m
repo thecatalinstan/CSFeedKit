@@ -22,14 +22,18 @@
         self.title = title;
         self.link = link;
         self.channelDescription = description;
-        self.items = [NSMutableArray array];
+        self.items = @[];
 
-        NSBundle * bundle = [NSBundle mainBundle];
-        self.generator = [NSString stringWithFormat:@"%@, v%@ build %@", bundle.bundleIdentifier, [bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [bundle objectForInfoDictionaryKey:@"CFBundleVersion"]];
+        NSBundle *bundle;
+        if (!(bundle = NSBundle.mainBundle)) {
+            self.generator = [NSString stringWithFormat:@"%@, v%@ build %@", bundle.bundleIdentifier, [bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [bundle objectForInfoDictionaryKey:@"CFBundleVersion"]];
+        } else {
+        }
+        
+        self.generator = @"";
         self.lastBuildDate = [NSDate date];
         self.pubDate = [NSDate date];
-        self.language = [NSLocale preferredLanguages].firstObject;
-
+        self.language = NSLocale.preferredLanguages.firstObject;
         self.ttl = 3600;
     }
     return self;
@@ -80,17 +84,17 @@
 
 - (NSXMLElement *)XMLElement {
 
-    NSXMLElement * element = [NSXMLElement elementWithName:@"channel"];
+    NSXMLElement *element = [NSXMLElement elementWithName:@"channel"];
     [element addChild:[NSXMLElement elementWithName:@"title" stringValue:self.title]];
     [element addChild:[NSXMLElement elementWithName:@"link" stringValue:self.link]];
 
-    NSXMLElement * descElement = [NSXMLElement elementWithName:@"description"];
-    NSXMLNode * cdataDescNode = [[NSXMLNode alloc] initWithKind:NSXMLTextKind options:NSXMLNodeIsCDATA];
+    NSXMLElement *descElement = [NSXMLElement elementWithName:@"description"];
+    NSXMLNode *cdataDescNode = [[NSXMLNode alloc] initWithKind:NSXMLTextKind options:NSXMLNodeIsCDATA];
     cdataDescNode.stringValue = self.channelDescription;
     [descElement addChild:cdataDescNode];
     [element addChild:descElement];
 
-    if ( self.generator.length > 0 ) {
+    if (self.generator.length) {
         [element addChild:[NSXMLElement elementWithName:@"generator" stringValue:self.generator]];
     }
 
@@ -100,21 +104,21 @@
     NSString *pubDateString = [[CSRFC2822DateFormatter sharedInstance] stringFromDate:self.pubDate];
     [element addChild:[NSXMLElement elementWithName:@"pubDate" stringValue:pubDateString]];
 
-    if ( self.language.length > 0 ) {
+    if (self.language.length) {
         [element addChild:[NSXMLElement elementWithName:@"language" stringValue:self.language]];
     }
 
-    if ( self.ttl > 0 ) {
+    if (self.ttl > 0) {
         [element addChild:[NSXMLElement elementWithName:@"ttl" stringValue:@(self.ttl).stringValue]];
     }
 
-    if ( self.category.length > 0 ) {
+    if (self.category.length) {
         [element addChild:[NSXMLElement elementWithName:@"category" stringValue:self.category]];
     }
 
-    [self.items enumerateObjectsUsingBlock:^(CSFeedItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [element addChild:obj.XMLElement];
-    }];
+    for (CSFeedItem *item in self.items) {
+        [element addChild:item.XMLElement];
+    }
 
     return element;
 }

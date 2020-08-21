@@ -19,8 +19,8 @@
     self = [super init];
     if ( self != nil ) {
         self.nodeName = nodeName ? : @"feed";
-        self.namespaces = [NSMutableDictionary dictionary];
-        self.channels = [NSMutableArray array];
+        self.namespaces = @{};
+        self.channels = @[];
     }
     return self;
 }
