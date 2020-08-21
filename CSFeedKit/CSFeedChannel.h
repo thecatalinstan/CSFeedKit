@@ -36,27 +36,27 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The date when the channel was last rebuild
  */
-@property (nonatomic, strong) NSDate * lastBuildDate;
+@property (nonatomic, strong, nullable) NSDate * lastBuildDate;
 
 /**
  *  The date when the channel was published
  */
-@property (nonatomic, strong) NSDate * pubDate;
+@property (nonatomic, strong, nullable) NSDate * pubDate;
 
 /**
  *  The generator of the channel
  */
-@property (nonatomic, strong) NSString * generator;
+@property (nonatomic, strong, nullable) NSString * generator;
 
 /**
  *  The language of the channel
  */
-@property (nonatomic, strong) NSString * language;
+@property (nonatomic, strong, nullable) NSString * language;
 
 /**
  *  The items in the channel
  */
-@property (nonatomic, strong) NSArray<CSFeedItem *> * items;
+@property (nonatomic, strong, nullable) NSArray<CSFeedItem *> * items;
 
 /**
  *  The number of seconds the channel can be safely cached

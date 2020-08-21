@@ -54,11 +54,11 @@ let feed = try CSRSSFeed(xmlString: xmlString)
 
 // Print channel info
 let channel = feed.channels[0]
-print("channel: \(channel.title) - \(channel.pubDate)")
+print("channel: \(channel.title) - \(channel.pubDate ?? Date.distantPast)")
 
 // Print the items
 for item in channel.items {
-    print(" * \(item.pubDate) - \(item.title) (\(item.link))")
+    print(" * \(item.pubDate ?? Date.distantPast) - \(item.title) (\(item.link))")
 }
 ```
 

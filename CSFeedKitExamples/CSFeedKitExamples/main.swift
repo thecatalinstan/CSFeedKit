@@ -11,7 +11,7 @@ import CSFeedKit
 
 // MARK: - Export the files in the home directory as an RSSFeed
 do {
-    let homeURL = FileManager.default.homeDirectoryForCurrentUser;
+    let homeURL = FileManager.default.homeDirectoryForCurrentUser
     let homePath = homeURL.path
 
     let channel = CSRSSFeedChannel(title: "Contents of \(homePath)", link: homeURL.absoluteString, description: "Lists the contents of \(homePath)")
@@ -23,14 +23,9 @@ do {
     for file in files {
         let url = URL(fileURLWithPath: file, relativeTo: homeURL)
         let item = CSRSSFeedItem(title: url.lastPathComponent, link: url.absoluteString, description: "Description of \(url.lastPathComponent)")
-        do {
-            let attributes = try FileManager.default.attributesOfItem(atPath: url.path)
-            item.pubDate = attributes[.modificationDate] as! Date
-            item.creator = attributes[.ownerAccountName] as? String
-        } catch {
-            item.pubDate = Date.distantPast
-            item.creator = NSFullUserName()
-        }
+        let attributes = try FileManager.default.attributesOfItem(atPath: url.path)
+        item.pubDate = attributes[.modificationDate] as? Date
+        item.creator = attributes[.ownerAccountName] as? String
         items.append(item)
     }
     
@@ -50,10 +45,10 @@ do {
     let feed = try CSRSSFeed(xmlString: xmlString)
     
     let channel = feed.channels[0]
-    print("channel: \(channel.title) - \(channel.pubDate)")
+    print("channel: \(channel.title) - \(channel.pubDate ?? Date.distantPast)")
     
     for item in channel.items as! [CSRSSFeedItem] {
-        print(" * \(item.pubDate) - \(item.title) (\(item.link))")
+        print(" * \(item.pubDate ?? Date.distantPast) - \(item.title) (\(item.link))")
     }
 } catch {
     print(error)

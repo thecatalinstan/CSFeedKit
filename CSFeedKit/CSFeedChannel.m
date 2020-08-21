@@ -22,15 +22,12 @@
         self.title = title;
         self.link = link;
         self.channelDescription = description;
-        self.items = @[];
 
         NSBundle *bundle;
         if (!(bundle = NSBundle.mainBundle)) {
             self.generator = [NSString stringWithFormat:@"%@, v%@ build %@", bundle.bundleIdentifier, [bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"], [bundle objectForInfoDictionaryKey:@"CFBundleVersion"]];
-        } else {
         }
         
-        self.generator = @"";
         self.lastBuildDate = [NSDate date];
         self.pubDate = [NSDate date];
         self.language = NSLocale.preferredLanguages.firstObject;
@@ -98,11 +95,15 @@
         [element addChild:[NSXMLElement elementWithName:@"generator" stringValue:self.generator]];
     }
 
-    NSString *lastBuildDateString = [[CSRFC2822DateFormatter sharedInstance] stringFromDate:self.lastBuildDate];
-    [element addChild:[NSXMLElement elementWithName:@"lastBuildDate" stringValue:lastBuildDateString]];
+    if (self.lastBuildDate) {
+        NSString *lastBuildDateString = [[CSRFC2822DateFormatter sharedInstance] stringFromDate:self.lastBuildDate];
+        [element addChild:[NSXMLElement elementWithName:@"lastBuildDate" stringValue:lastBuildDateString]];
+    }
 
-    NSString *pubDateString = [[CSRFC2822DateFormatter sharedInstance] stringFromDate:self.pubDate];
-    [element addChild:[NSXMLElement elementWithName:@"pubDate" stringValue:pubDateString]];
+    if (self.pubDate) {
+        NSString *pubDateString = [[CSRFC2822DateFormatter sharedInstance] stringFromDate:self.pubDate];
+        [element addChild:[NSXMLElement elementWithName:@"pubDate" stringValue:pubDateString]];
+    }
 
     if (self.language.length) {
         [element addChild:[NSXMLElement elementWithName:@"language" stringValue:self.language]];

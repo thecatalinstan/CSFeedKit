@@ -23,7 +23,6 @@
         self.itemDescription = description;
         self.GUID = self.link;
         self.GUIDIsPermaLink = YES;
-        self.pubDate = [NSDate date];
     }
     return self;
 }
@@ -59,22 +58,31 @@
 
     [element addChild:[NSXMLElement elementWithName:@"title" stringValue:self.title]];
     [element addChild:[NSXMLElement elementWithName:@"link" stringValue:self.link]];
-    [element addChild:[NSXMLElement elementWithName:@"comments" stringValue:self.comments]];
-
-    NSXMLElement * GUIDElement = [NSXMLElement elementWithName:@"guid" stringValue:self.GUID];
-    [GUIDElement setAttributesWithDictionary:@{@"isPermaLink" : self.GUIDIsPermaLink ? @"true" : @"false" }];
-    [element addChild:GUIDElement];
-
-    NSString *dateString = [[CSRFC2822DateFormatter sharedInstance] stringFromDate:self.pubDate];
-    [element addChild:[NSXMLElement elementWithName:@"pubDate" stringValue:dateString]];
 
     NSXMLElement * descElement = [NSXMLElement elementWithName:@"description"];
     NSXMLNode * cdataDescNode = [[NSXMLNode alloc] initWithKind:NSXMLTextKind options:NSXMLNodeIsCDATA];
     cdataDescNode.stringValue = self.itemDescription;
     [descElement addChild:cdataDescNode];
     [element addChild:descElement];
+    
+    if (self.comments.length) {
+        [element addChild:[NSXMLElement elementWithName:@"comments" stringValue:self.comments]];
+    }
 
-    if ( self.info.length > 0 ) {
+    if (self.GUID.length) {
+        NSXMLElement * GUIDElement = [NSXMLElement elementWithName:@"guid" stringValue:self.GUID];
+        [GUIDElement setAttributesWithDictionary:@{
+            @"isPermaLink" : self.GUIDIsPermaLink ? @"true" : @"false"
+        }];
+        [element addChild:GUIDElement];
+    }
+
+    if (self.pubDate) {
+        NSString *dateString = [[CSRFC2822DateFormatter sharedInstance] stringFromDate:self.pubDate];
+        [element addChild:[NSXMLElement elementWithName:@"pubDate" stringValue:dateString]];
+    }
+
+    if (self.info.length) {
         [element addChild:[NSXMLElement elementWithName:@"info" stringValue:self.info]];
     }
 

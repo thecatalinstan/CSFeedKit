@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The globally unique identifier of the item.
  */
-@property (nonatomic, strong) NSString * GUID;
+@property (nonatomic, strong, nullable) NSString * GUID;
 
 /**
  *  Determines the valie of the `isPermalink` attribute.
@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The date when the item was published
  */
-@property (nonatomic, strong) NSDate * pubDate;
+@property (nonatomic, strong, nullable) NSDate * pubDate;
 
 /**
  *  @name Creating a new `CSFeedItem`
