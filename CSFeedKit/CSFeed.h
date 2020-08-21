@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The namespaces associated with the feed.
  */
-@property (nonatomic, strong) NSMutableDictionary<NSString *, NSString *> * namespaces;
+@property (nonatomic, strong) NSDictionary<NSString *, NSString *> * namespaces;
 
 /**
  *  The channels of the feed.

@@ -36,7 +36,9 @@
     CSFeed * feed = [[CSFeed alloc] init];
     feed.channels = @[channel];
     feed.version = @"1.0.0";
-    feed.namespaces[@"cs"] = @"http://catalinstan.com/cs.dtd";
+    feed.namespaces = @{
+        @"cs": @"http://catalinstan.com/cs.dtd"//
+    };
 
     XCTAssertNotNil(feed);
     XCTAssertNoThrow(feed.XMLElement);

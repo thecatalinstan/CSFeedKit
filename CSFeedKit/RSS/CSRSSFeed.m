@@ -18,11 +18,13 @@
 - (instancetype)initWithNodeName:(NSString *)nodeName {
     self = [super initWithNodeName:nodeName];
     if ( self != nil ) {
-        self.nodeName = nodeName ? : @"rss";
-        self.namespaces[@"content"] = @"http://purl.org/rss/1.0/modules/content/";
-        self.namespaces[@"wfw"] = @"http://wellformedweb.org/CommentAPI/";
-        self.namespaces[@"dc"] = @"http://purl.org/dc/elements/1.1/";
+        self.nodeName = nodeName ?: @"rss";
         self.version = @"2.0";
+        self.namespaces = @{
+            @"content": @"http://purl.org/rss/1.0/modules/content/",
+            @"wfw": @"http://wellformedweb.org/CommentAPI/",
+            @"dc": @"http://purl.org/dc/elements/1.1/",
+        };
     }
     return self;
 }

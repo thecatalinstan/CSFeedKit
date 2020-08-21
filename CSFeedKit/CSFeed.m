@@ -28,13 +28,14 @@
 - (instancetype)initWithXMLElement:(NSXMLElement *)element {
     self = [self initWithNodeName:element.name];
     if ( self != nil ) {
-
         self.version = [element attributeForName:@"version"].stringValue;
-
-        [element.namespaces enumerateObjectsUsingBlock:^(NSXMLNode * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            self.namespaces[obj.name] = obj.stringValue;
-        }];
-
+        
+        NSMutableDictionary<NSString *, NSString *> *namespaces = [NSMutableDictionary dictionaryWithCapacity:element.namespaces.count];
+        for (NSXMLNode *namespace in namespaces) {
+            namespaces[namespace.name] = namespace.stringValue;
+        }
+        self.namespaces = namespaces;
+        
         NSArray<NSXMLElement *> *channelElements = [element elementsForName:@"channel"];
         NSMutableArray<CSFeedChannel *> *channels = [NSMutableArray arrayWithCapacity:channelElements.count];
         for (NSXMLElement *channelElement in channelElements) {
