@@ -29,12 +29,14 @@
 
 - (instancetype)initWithXMLElement:(NSXMLElement *)element {
     self = [super initWithXMLElement:element];
-    if ( self != nil ) {
-        [self.channels removeAllObjects];
-        NSArray<NSXMLElement *> * channels = [element elementsForName:@"channel"];
-        [channels enumerateObjectsUsingBlock:^(NSXMLElement * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [self.channels addObject:[[CSRSSFeedChannel alloc] initWithXMLElement:obj]];
-        }];
+    if (self != nil) {
+        NSArray<NSXMLElement *> *channelElements = [element elementsForName:@"channel"];
+        NSMutableArray<CSRSSFeedChannel *> *channels = [NSMutableArray arrayWithCapacity:channelElements.count];
+        for (NSXMLElement *channelElement in channelElements) {
+            CSRSSFeedChannel *channel = [[CSRSSFeedChannel alloc] initWithXMLElement:channelElement];
+            [channels addObject:channel];
+        }
+        self.channels = channels;
     }
     return self;
 }

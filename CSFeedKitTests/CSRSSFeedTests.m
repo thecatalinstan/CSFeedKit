@@ -35,7 +35,7 @@
     [channel.items addObject:item];
 
     CSRSSFeed * feed = [[CSRSSFeed alloc] init];
-    [feed.channels addObject:channel];
+    feed.channels = @[channel];
 
     XCTAssertNotNil(feed);
     XCTAssertNoThrow(feed.XMLElement);

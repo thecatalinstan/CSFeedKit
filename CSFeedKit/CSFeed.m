@@ -35,10 +35,13 @@
             self.namespaces[obj.name] = obj.stringValue;
         }];
 
-        NSArray<NSXMLElement *> * channels = [element elementsForName:@"channel"];
-        [channels enumerateObjectsUsingBlock:^(NSXMLElement * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [self.channels addObject:[[CSFeedChannel alloc] initWithXMLElement:obj]];
-        }];
+        NSArray<NSXMLElement *> *channelElements = [element elementsForName:@"channel"];
+        NSMutableArray<CSFeedChannel *> *channels = [NSMutableArray arrayWithCapacity:channelElements.count];
+        for (NSXMLElement *channelElement in channelElements) {
+            CSFeedChannel *channel = [[CSFeedChannel alloc] initWithXMLElement:channelElement];
+            [channels addObject:channel];
+        }
+        self.channels = channels;
     }
     return self;
 }

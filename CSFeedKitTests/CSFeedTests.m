@@ -34,7 +34,7 @@
     [channel.items addObject:item];
 
     CSFeed * feed = [[CSFeed alloc] init];
-    [feed.channels addObject:channel];
+    feed.channels = @[channel];
     feed.version = @"1.0.0";
     feed.namespaces[@"cs"] = @"http://catalinstan.com/cs.dtd";
 

@@ -33,7 +33,7 @@ do {
     }
 
     let feed = CSRSSFeed()
-    feed.channels.add(channel)
+    feed.channels = [channel]
 
     print(feed.xmlElement().xmlString(options: .nodePrettyPrint))
 } catch {
@@ -44,9 +44,10 @@ do {
 do {
     let xmlString = try String(contentsOf: URL(string: "https://news.ycombinator.com/rss")!)
     let feed = try CSRSSFeed(xmlString: xmlString)
-    let channel = feed.channels.firstObject as! CSRSSFeedChannel
-
+    
+    let channel = feed.channels[0]
     print("channel: \(channel.title) - \(channel.pubDate)")
+    
     for item in channel.items as! [CSRSSFeedItem] {
         print(" * \(item.pubDate) - \(item.title) (\(item.link))")
     }

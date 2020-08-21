@@ -34,7 +34,7 @@ channel.items.add(item)
 let feed = CSRSSFeed()
 
 // Add the channel to the feed
-feed.channels.add(channel)
+feed.channels = [channel]
 
 // Output the XML
 print(feed.xmlElement().xmlString(options: .nodePrettyPrint))
@@ -52,7 +52,7 @@ let xmlString = try String(contentsOf: URL(string: "https://news.ycombinator.com
 let feed = try CSRSSFeed(xmlString: xmlString)
 
 // Print channel info
-let channel = feed.channels.firstObject as! CSRSSFeedChannel
+let channel = feed.channels[0]
 print("channel: \(channel.title) - \(channel.pubDate)")
 
 // Print the items

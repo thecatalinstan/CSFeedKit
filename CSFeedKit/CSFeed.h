@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The channels of the feed.
  */
-@property (nonatomic, strong) NSMutableArray<CSFeedChannel *> * channels;
+@property (nonatomic, strong) NSArray<CSFeedChannel *> * channels;
 
 /**
  *  The name of the XML node used to output the feed. (Defaults to `feed`)
