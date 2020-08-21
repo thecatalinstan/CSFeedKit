@@ -10,8 +10,7 @@ This file includes all notable changes to CSFeedKit.
 
 **Released on Friday, August 21, 2020**.
 
-This release adds support for the `images` and `enclosure` properties of an RSS channel and item respecively. It also updates the projects to Xcode 11.6 and Xcode project format 9.3. The examples have also been updated to Swift 5.
-
+This release adds support for the `image` and `enclosure` properties of an RSS channel and item respectively. It also updates the projects to Xcode 11.6 recommended build settings and the Xcode project format to 9.3. The examples have also been updated to Swift 5.
 
 #### Added
 
