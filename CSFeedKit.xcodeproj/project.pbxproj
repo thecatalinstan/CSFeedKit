@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A6110FC24EFD42500AA3F21 /* CSRSSFeedChannelImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A6110FA24EFD42500AA3F21 /* CSRSSFeedChannelImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4A6110FD24EFD42500AA3F21 /* CSRSSFeedChannelImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6110FB24EFD42500AA3F21 /* CSRSSFeedChannelImage.m */; };
 		ADD605D51D4E5FC100C6E41A /* CSFeedChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = ADD605D31D4E5FC100C6E41A /* CSFeedChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADD605D61D4E5FC100C6E41A /* CSFeedChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD605D41D4E5FC100C6E41A /* CSFeedChannel.m */; };
 		ADD605D91D4E6B0B00C6E41A /* CSFeedChannelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD605D71D4E6A3D00C6E41A /* CSFeedChannelTests.m */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A6110FA24EFD42500AA3F21 /* CSRSSFeedChannelImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSRSSFeedChannelImage.h; sourceTree = "<group>"; };
+		4A6110FB24EFD42500AA3F21 /* CSRSSFeedChannelImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSRSSFeedChannelImage.m; sourceTree = "<group>"; };
 		ADD605D31D4E5FC100C6E41A /* CSFeedChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedChannel.h; sourceTree = "<group>"; };
 		ADD605D41D4E5FC100C6E41A /* CSFeedChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedChannel.m; sourceTree = "<group>"; };
 		ADD605D71D4E6A3D00C6E41A /* CSFeedChannelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedChannelTests.m; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 				ADD605EF1D4E81EB00C6E41A /* CSRSSFeed.m */,
 				ADD605EB1D4E818D00C6E41A /* CSRSSFeedChannel.h */,
 				ADD605EC1D4E818D00C6E41A /* CSRSSFeedChannel.m */,
+				4A6110FA24EFD42500AA3F21 /* CSRSSFeedChannelImage.h */,
+				4A6110FB24EFD42500AA3F21 /* CSRSSFeedChannelImage.m */,
 				ADD605E51D4E7D9700C6E41A /* CSRSSFeedItem.h */,
 				ADD605E61D4E7D9700C6E41A /* CSRSSFeedItem.m */,
 			);
@@ -155,6 +161,7 @@
 				ADD605F21D4E82E900C6E41A /* CSRSSFeedChannel.h in Headers */,
 				ADD605DC1D4E708B00C6E41A /* CSFeed.h in Headers */,
 				ADD605E71D4E7D9700C6E41A /* CSRSSFeedItem.h in Headers */,
+				4A6110FC24EFD42500AA3F21 /* CSRSSFeedChannelImage.h in Headers */,
 				ADE5FFAA1D4D37CA005C6E43 /* CSFeedKit.h in Headers */,
 				ADDD729D1D4D3CBF00864961 /* CSFeedItem.h in Headers */,
 				ADD605D51D4E5FC100C6E41A /* CSFeedChannel.h in Headers */,
@@ -260,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A6110FD24EFD42500AA3F21 /* CSRSSFeedChannelImage.m in Sources */,
 				ADD605DD1D4E708B00C6E41A /* CSFeed.m in Sources */,
 				ADD605F51D4E855300C6E41A /* CSRSSFeedChannel.m in Sources */,
 				ADD605F61D4E85B000C6E41A /* CSRSSFeed.m in Sources */,

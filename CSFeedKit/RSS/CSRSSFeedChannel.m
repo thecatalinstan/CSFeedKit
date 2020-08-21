@@ -7,6 +7,7 @@
 //
 
 #import "CSRSSFeedChannel.h"
+#import "CSRSSFeedChannelImage.h"
 #import "CSRSSFeedItem.h"
 
 @implementation CSRSSFeedChannel
@@ -23,6 +24,14 @@
         self.items = items;
     }
     return self;
+}
+
+- (NSXMLElement *)XMLElement {
+    NSXMLElement *element = [super XMLElement];
+    if (self.image) {
+        [element addChild:self.image.XMLElement];
+    }
+    return element;
 }
 
 @end

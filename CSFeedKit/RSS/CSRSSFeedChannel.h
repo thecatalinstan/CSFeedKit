@@ -8,6 +8,8 @@
 
 #import "CSFeedChannel.h"
 
+@class CSRSSFeedChannelImage;
+
 NS_ASSUME_NONNULL_BEGIN
 
 /**
@@ -15,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 @interface CSRSSFeedChannel : CSFeedChannel
+
+@property (nonatomic, strong, nullable) CSRSSFeedChannelImage *image;
 
 @end
 
