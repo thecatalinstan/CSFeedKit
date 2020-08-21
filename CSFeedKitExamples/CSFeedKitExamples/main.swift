@@ -9,50 +9,46 @@
 import Foundation
 import CSFeedKit
 
-// Export the files in the home directory as an RSSFeed
+// MARK: - Export the files in the home directory as an RSSFeed
 do {
+    let homeURL = FileManager.default.homeDirectoryForCurrentUser;
+    let homePath = homeURL.path
 
-    let homePath = NSString(string:"~").stringByExpandingTildeInPath
-    let homeURL = NSURL.fileURLWithPath(homePath)
-
-    let channel = CSRSSFeedChannel.init(title: "Contents of \(homePath)", link: homeURL.absoluteString, description: "Lists the contents of \(homePath)")
+    let channel = CSRSSFeedChannel(title: "Contents of \(homePath)", link: homeURL.absoluteString, description: "Lists the contents of \(homePath)")
     channel.category = "Filesystem"
 
-    let files = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(homePath)
-    for (_, path) in files.enumerate() {
-        var link:NSURL = NSURL.fileURLWithPath(path)
-        let item = CSRSSFeedItem(title: link.lastPathComponent! , link: link.absoluteString, description: "Description of \(link.lastPathComponent!)");
+    let files = try FileManager.default.contentsOfDirectory(atPath: homePath)
+    for file in files {
+        let url = URL(fileURLWithPath: file, relativeTo: homeURL)
+        let item = CSRSSFeedItem(title: url.lastPathComponent, link: url.absoluteString, description: "Description of \(url.lastPathComponent)")
         do {
-            let attributes = try NSFileManager.defaultManager().attributesOfItemAtPath("\(homePath)/\(path)")
-            print(attributes)
-            item.pubDate = attributes[NSFileCreationDate] as! NSDate
-            item.creator = attributes[NSFileOwnerAccountName] as? String
+            let attributes = try FileManager.default.attributesOfItem(atPath: url.path)
+            item.pubDate = attributes[.modificationDate] as! Date
+            item.creator = attributes[.ownerAccountName] as? String
         } catch {
-            item.pubDate = NSDate.distantPast()
+            item.pubDate = Date.distantPast
             item.creator = NSFullUserName()
         }
-        channel.items.addObject(item)
+        channel.items.add(item)
     }
 
     let feed = CSRSSFeed()
-    feed.channels.addObject(channel)
+    feed.channels.add(channel)
 
-    print ( feed.XMLElement().XMLStringWithOptions(NSXMLNodePrettyPrint))
+    print(feed.xmlElement().xmlString(options: .nodePrettyPrint))
 } catch {
     print(error)
 }
 
-
-// Parse a feed from the web
+// MARK: - Parse a feed from the web
 do {
-    let xmlString = try NSString.init(contentsOfURL: NSURL(string: "https://news.ycombinator.com/rss")!, encoding: NSUTF8StringEncoding)
-    let feed = try CSRSSFeed.init(XMLString: xmlString as String)
+    let xmlString = try String(contentsOf: URL(string: "https://news.ycombinator.com/rss")!)
+    let feed = try CSRSSFeed(xmlString: xmlString)
     let channel = feed.channels.firstObject as! CSRSSFeedChannel
 
     print("channel: \(channel.title) - \(channel.pubDate)")
-    for (_, item) in channel.items.enumerate() {
-        var rssItem = item as! CSRSSFeedItem
-        print(" * \(rssItem.pubDate) - \(rssItem.title) (\(rssItem.link))")
+    for item in channel.items as! [CSRSSFeedItem] {
+        print(" * \(item.pubDate) - \(item.title) (\(item.link))")
     }
 } catch {
     print(error)

@@ -21,24 +21,23 @@ end
 The example below creates an RSS feed and prints the resulting XML string.
 
 ```swift
-
 // Create a channel
 let channel = CSRSSFeedChannel.init(title: "My RSS feed", link: "http://my.rss.feed/", description: "My first CSFeedKit RSS feed")
 channel.category = "Examples"
 
 // Add an item to the channel
 let item = CSRSSFeedItem(title: "Item" , link: "http://my.rss.feed/item", description: "The coolest item so far.");
-item1.creator = NSFullUserName()
-channel.items.addObject(item)
+item.creator = NSFullUserName()
+channel.items.add(item)
 
 // Create the feed
 let feed = CSRSSFeed()
 
 // Add the channel to the feed
-feed.channels.addObject(channel)
+feed.channels.add(channel)
 
 // Output the XML
-print ( feed.XMLDocument().XMLStringWithOptions(NSXMLNodePrettyPrint))
+print(feed.xmlElement().xmlString(options: .nodePrettyPrint))
 ```
 
 ## Parsing an RSS feed
@@ -46,24 +45,19 @@ print ( feed.XMLDocument().XMLStringWithOptions(NSXMLNodePrettyPrint))
 The following prints out the titles and URLs of the items in the [Hacker News RSS feed](https://news.ycombinator.com/rss).
 
 ```swift
-do {
-	// Get the XML string (don't do it like this in the real-world ;) )
-	let xmlString = try NSString.init(contentsOfURL: NSURL(string: "https://news.ycombinator.com/rss")!, encoding: NSUTF8StringEncoding)
-	
-	// Init the feed
-	let feed = try CSRSSFeed.init(XMLString: xmlString as String)
-	
-	// Print channel info
-	let channel = feed.channels.firstObject as! CSRSSFeedChannel
-	print("channel: \(channel.title)")
-	
-	// Print the items
-	for (_, item) in channel.items.enumerate() {
-		var rssItem = item as! CSRSSFeedItem
-		print(" * \(rssItem.pubDate) - \(rssItem.title) (\(rssItem.link))")
-	}
-} catch {
-	print(error)
+// Get the XML string (don't do it like this in the real-world ;) )
+let xmlString = try String(contentsOf: URL(string: "https://news.ycombinator.com/rss")!)
+
+// Init the feed
+let feed = try CSRSSFeed(xmlString: xmlString)
+
+// Print channel info
+let channel = feed.channels.firstObject as! CSRSSFeedChannel
+print("channel: \(channel.title) - \(channel.pubDate)")
+
+// Print the items
+for item in channel.items as! [CSRSSFeedItem] {
+    print(" * \(item.pubDate) - \(item.title) (\(item.link))")
 }
 ```
 
