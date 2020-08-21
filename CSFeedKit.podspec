@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.module_name                 = "CSFeedKit"
 
   s.source_files                = "CSFeedKit/*.{h,m}", "CSFeedKit/RSS/*.{h,m}"
-  s.public_header_files         = "CSFeedKit/CSFeedKit.h", "CSFeedKit/CSFeed.h", "CSFeedKit/CSFeedChannel.h", "CSFeedKit/CSFeedItem.h", "CSFeedKit/RSS/CSRSSFeed.h", "CSFeedKit/RSS/CSRSSFeedChannel.h", "CSFeedKit/RSS/CSRSSFeedItem.h"
+  s.public_header_files         = "CSFeedKit/CSFeedKit.h", "CSFeedKit/CSFeed.h", "CSFeedKit/CSFeedChannel.h", "CSFeedKit/CSFeedItem.h", "CSFeedKit/RSS/CSRSSFeed.h", "CSFeedKit/RSS/CSRSSFeedChannel.h", "CSFeedKit/CSRSSFeedChannelImage.h",  "CSFeedKit/RSS/CSRSSFeedItem.h", "CSFeedKit/CSRSSFeedItemEnclosure.h"
 
   s.osx.deployment_target       = "10.8"
   s.osx.frameworks              = "Foundation"
