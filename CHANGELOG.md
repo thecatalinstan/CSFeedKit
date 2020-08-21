@@ -6,6 +6,18 @@ This file includes all notable changes to CSFeedKit.
 
 ---
 
+## [0.3.0](https://github.com/thecatalinstan/CSFeedKit/releases/tag/0.3.0) (08/21/2020)
+
+**Released on Friday, August 21, 2020**.
+
+This release adds support for the `images` and `enclosure` properties of an RSS channel and item respecively. It also updates the projects to Xcode 11.6 and Xcode project format 9.3. The examples have also been updated to Swift 5.
+
+
+#### Added
+
+* The `enclosure` property to `CSFeedItem` 
+* The `image` property to `CSFeedChannel`
+
 ## [0.2.1](https://github.com/thecatalinstan/CSFeedKit/releases/tag/0.2.1) (08/24/2016)
 
 **Released on Wednesday, August 24, 2016**.
