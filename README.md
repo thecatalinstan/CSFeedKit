@@ -25,10 +25,11 @@ The example below creates an RSS feed and prints the resulting XML string.
 let channel = CSRSSFeedChannel.init(title: "My RSS feed", link: "http://my.rss.feed/", description: "My first CSFeedKit RSS feed")
 channel.category = "Examples"
 
-// Add an item to the channel
-let item = CSRSSFeedItem(title: "Item" , link: "http://my.rss.feed/item", description: "The coolest item so far.");
-item.creator = NSFullUserName()
-channel.items.add(item)
+// Add two items to the channel
+var items = Array<CSRSSFeedItem>()
+items.append(CSRSSFeedItem(title: "Item 1" , link: "http://my.rss.feed/item1", description: "The coolest item so far."))
+items.append(CSRSSFeedItem(title: "Item 2" , link: "http://my.rss.feed/item2", description: "An even cooler item."))
+channel.items = items
 
 // Create the feed
 let feed = CSRSSFeed()
@@ -56,7 +57,7 @@ let channel = feed.channels[0]
 print("channel: \(channel.title) - \(channel.pubDate)")
 
 // Print the items
-for item in channel.items as! [CSRSSFeedItem] {
+for item in channel.items {
     print(" * \(item.pubDate) - \(item.title) (\(item.link))")
 }
 ```

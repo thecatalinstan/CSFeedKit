@@ -30,7 +30,7 @@
     CSFeedItem * item = [[CSFeedItem alloc] initWithTitle:@"The title" link:@"http://catalinstan.com/the-feed" description:@"Lorem ipsum dolor ..."];
 
     CSFeedChannel * channel = [[CSFeedChannel alloc] initWithTitle:@"The title" link:@"http://catalinstan.com/the-feed" description:@"Lorem ipsum dolor ..."];
-    [channel.items addObject:item];
+    channel.items = @[item];
 
     XCTAssertNotNil(channel);
     XCTAssertNoThrow(channel.XMLElement);

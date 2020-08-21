@@ -63,10 +63,13 @@
             self.pubDate = [[CSRFC2822DateFormatter sharedInstance] dateFromString:pubDateElement.stringValue];
         }
 
-        NSArray<NSXMLElement *> * items = [element elementsForName:@"item"];
-        [items enumerateObjectsUsingBlock:^(NSXMLElement * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [self.items addObject:[[CSFeedItem alloc] initWithXMLElement:obj]];
-        }];
+        NSArray<NSXMLElement *> * itemElements = [element elementsForName:@"item"];
+        NSMutableArray<CSFeedItem *> *items = [NSMutableArray arrayWithCapacity:itemElements.count];
+        for (NSXMLElement * _Nonnull itemElement in itemElements) {
+            CSFeedItem *item = [[CSFeedItem alloc] initWithXMLElement:itemElement];
+            [items addObject:item];
+        }
+        self.items = items;        
     }
     return self;
 }

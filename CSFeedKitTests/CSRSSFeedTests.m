@@ -32,7 +32,7 @@
     item.creator = @"Cătălin Stan";
 
     CSRSSFeedChannel * channel = [[CSRSSFeedChannel alloc] initWithTitle:@"The title" link:@"http://catalinstan.com/the-feed" description:@"Lorem ipsum dolor ..."];
-    [channel.items addObject:item];
+    channel.items = @[item];
 
     CSRSSFeed * feed = [[CSRSSFeed alloc] init];
     feed.channels = @[channel];

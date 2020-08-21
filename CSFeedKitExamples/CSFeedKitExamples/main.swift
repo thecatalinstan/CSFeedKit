@@ -16,6 +16,8 @@ do {
 
     let channel = CSRSSFeedChannel(title: "Contents of \(homePath)", link: homeURL.absoluteString, description: "Lists the contents of \(homePath)")
     channel.category = "Filesystem"
+    
+    var items = Array<CSRSSFeedItem>()
 
     let files = try FileManager.default.contentsOfDirectory(atPath: homePath)
     for file in files {
@@ -29,9 +31,11 @@ do {
             item.pubDate = Date.distantPast
             item.creator = NSFullUserName()
         }
-        channel.items.add(item)
+        items.append(item)
     }
-
+    
+    channel.items = items
+    
     let feed = CSRSSFeed()
     feed.channels = [channel]
 

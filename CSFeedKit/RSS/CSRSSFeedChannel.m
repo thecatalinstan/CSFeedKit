@@ -14,11 +14,13 @@
 - (instancetype)initWithXMLElement:(NSXMLElement *)element {
     self = [super initWithXMLElement:element];
     if ( self != nil ) {
-        [self.items removeAllObjects];
-        NSArray<NSXMLElement *> * items = [element elementsForName:@"item"];
-        [items enumerateObjectsUsingBlock:^(NSXMLElement * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [self.items addObject:[[CSRSSFeedItem alloc] initWithXMLElement:obj]];
-        }];
+        NSArray<NSXMLElement *> * itemElements = [element elementsForName:@"item"];
+        NSMutableArray<CSRSSFeedItem *> *items = [NSMutableArray arrayWithCapacity:itemElements.count];
+        for (NSXMLElement * _Nonnull itemElement in itemElements) {
+            CSRSSFeedItem *item = [[CSRSSFeedItem alloc] initWithXMLElement:itemElement];
+            [items addObject:item];
+        }
+        self.items = items;
     }
     return self;
 }

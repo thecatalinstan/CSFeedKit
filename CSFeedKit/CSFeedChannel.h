@@ -56,7 +56,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  The items in the channel
  */
-@property (nonatomic, strong) NSMutableArray<CSFeedItem *> * items;
+@property (nonatomic, strong) NSArray<CSFeedItem *> * items;
 
 /**
  *  The number of seconds the channel can be safely cached
