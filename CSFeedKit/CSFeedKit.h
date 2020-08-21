@@ -19,5 +19,6 @@ FOUNDATION_EXPORT const unsigned char CSFeedKitVersionString[];
 #import <CSFeedKit/CSRSSFeedChannel.h>
 #import <CSFeedKit/CSRSSFeedChannelImage.h>
 #import <CSFeedKit/CSRSSFeedItem.h>
+#import <CSFeedKit/CSRSSFeedItemEnclosure.h>
 
 

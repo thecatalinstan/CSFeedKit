@@ -1,5 +1,5 @@
 //
-//  CSRSSFeedChannelImage.h
+//  CSRSSFeedItemEnclosure.h
 //  CSFeedKit-macOS
 //
 //  Created by Catalin Stan on 21/08/2020.
@@ -10,16 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CSRSSFeedChannelImage : NSObject
+@interface CSRSSFeedItemEnclosure : NSObject
 
-@property (nonatomic, strong) NSString *link;
-@property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *url;
-@property (nonatomic, strong, nullable) NSString *imageDescription;
-@property (nonatomic) NSInteger width;
-@property (nonatomic) NSInteger height;
+@property (nonatomic) NSInteger length;
+@property (nonatomic, strong) NSString *type;
 
-- (instancetype)initWithURL:(NSString *)url title:(NSString *)title link:(NSString *)link NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithURL:(NSString *)url length:(NSInteger)length type:(NSString *)type NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)initWithXMLElement:(NSXMLElement *)element;
 - (nullable instancetype)initWithXMLString:(NSString *)string error:(NSError * _Nullable __autoreleasing * _Nullable)error;
