@@ -54,6 +54,7 @@
 		AD89EA4E26732FF7006AA908 /* CSFeedKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CSFeedKit.podspec; sourceTree = "<group>"; };
 		AD89EA4F26732FF7006AA908 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		AD89EA5026732FF7006AA908 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AD89EA542673310E006AA908 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		ADD605D31D4E5FC100C6E41A /* CSFeedChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedChannel.h; sourceTree = "<group>"; };
 		ADD605D41D4E5FC100C6E41A /* CSFeedChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedChannel.m; sourceTree = "<group>"; };
 		ADD605D71D4E6A3D00C6E41A /* CSFeedChannelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedChannelTests.m; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 		AD89EA4D26732FD2006AA908 /* Packaging */ = {
 			isa = PBXGroup;
 			children = (
+				AD89EA542673310E006AA908 /* Package.swift */,
 				AD89EA4E26732FF7006AA908 /* CSFeedKit.podspec */,
 				AD89EA4F26732FF7006AA908 /* CHANGELOG.md */,
 				AD89EA5026732FF7006AA908 /* README.md */,
@@ -244,6 +246,7 @@
 				TargetAttributes = {
 					ADE5FFA51D4D37CA005C6E43 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 1250;
 					};
 					ADE5FFAF1D4D37CA005C6E43 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -444,8 +447,10 @@
 		ADE5FFBB1D4D37CA005C6E43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 4;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -460,14 +465,18 @@
 				MARKETING_VERSION = 0.3.0;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		ADE5FFBC1D4D37CA005C6E43 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 4;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -482,6 +491,7 @@
 				MARKETING_VERSION = 0.3.0;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
