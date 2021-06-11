@@ -20,9 +20,9 @@ let package = Package(
             ],
             publicHeadersPath: "include",
             cSettings: [
+                .headerSearchPath("include"),
                 .headerSearchPath("CSFeedKit"),
                 .headerSearchPath("CSFeedKit/RSS"),
-                .headerSearchPath("include")
             ]
         ),
 
