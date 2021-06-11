@@ -118,14 +118,14 @@
 			isa = PBXGroup;
 			children = (
 				ADD399902673475A000E6FAC /* CSFeedKit.h */,
-				ADD3998E2673475A000E6FAC /* CSRSSFeedChannel.h */,
 				ADD3998F2673475A000E6FAC /* CSFeed.h */,
-				ADD399912673475A000E6FAC /* CSRSSFeedChannelImage.h */,
-				ADD399922673475A000E6FAC /* CSFeedItem.h */,
 				ADD399932673475A000E6FAC /* CSFeedChannel.h */,
+				ADD399922673475A000E6FAC /* CSFeedItem.h */,
 				ADD399942673475A000E6FAC /* CSRSSFeed.h */,
-				ADD399952673475A000E6FAC /* CSRSSFeedItemEnclosure.h */,
+				ADD3998E2673475A000E6FAC /* CSRSSFeedChannel.h */,
+				ADD399912673475A000E6FAC /* CSRSSFeedChannelImage.h */,
 				ADD399962673475A000E6FAC /* CSRSSFeedItem.h */,
+				ADD399952673475A000E6FAC /* CSRSSFeedItemEnclosure.h */,
 			);
 			path = CSFeedKit;
 			sourceTree = "<group>";
@@ -461,7 +461,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -472,7 +472,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 1.0.0;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -484,7 +484,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -495,7 +495,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 1.0.0;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};

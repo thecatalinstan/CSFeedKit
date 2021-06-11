@@ -6,13 +6,25 @@ An RSS feed generator and parser for macOS. Swift and Objective-C compatible.
 
 ## Installation
 
-Install using [CocoaPods](http://cocoapods.org) by adding this line to your Podfile:
+You can install by either cloning the repo directy and adding the included project or by using one of the package managers, as described below.
+
+### Swift Package Manager
+
+Add the package to your project's dependencies. If you have a `Package.swift`, it should look similar to this:
+
+```swift
+dependencies: [
+    .package(name: "CSFeedKit", url: "https://github.com/thecatalinstan/CSFeedKit", from: "1.0.0"),
+]
+```
+
+Install using [CocoaPods](http://cocoapods.org) by adding this line to your `Podfile`:
 
 ````ruby
 use_frameworks!
 
 target 'MyApp' do
-  pod 'CSFeedKit'
+    pod 'CSFeedKit'
 end
 ````
 
