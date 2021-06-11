@@ -18,16 +18,12 @@ let package = Package(
             exclude: [
                 "CSFeedKitExamples"
             ],
-            publicHeadersPath: "include",
+            publicHeadersPath: "Headers",
             cSettings: [
-                .headerSearchPath("include"),
-                .headerSearchPath("CSFeedKit"),
-                .headerSearchPath("CSFeedKit/RSS"),
+                .headerSearchPath("Source"),
             ]
         ),
 
-        .testTarget(name: "CSFeedKitTests",
-                    dependencies: ["CSFeedKit"],
-                    path: "CSFeedKitTests"),
+        .testTarget(name: "CSFeedKitTests", dependencies: ["CSFeedKit"], path: "CSFeedKitTests"),
     ]
 )
