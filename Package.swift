@@ -15,6 +15,9 @@ let package = Package(
         .target(
             name: "CSFeedKit",
             path: "CSFeedKit",
+            exclude: [
+                "CSFeedKitExamples"
+            ],
             publicHeadersPath: "include",
             cSettings: [
                 .headerSearchPath("RSS")
