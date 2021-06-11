@@ -6,8 +6,8 @@
 //  Copyright © 2016 Cătălin Stan. All rights reserved.
 //
 
-#import "CSFeedChannel.h"
-#import "CSFeedItem.h"
+#import <CSFeedKit/CSFeedChannel.h>
+#import <CSFeedKit/CSFeedItem.h>
 #import "CSRFC2822DateFormatter.h"
 
 @implementation CSFeedChannel

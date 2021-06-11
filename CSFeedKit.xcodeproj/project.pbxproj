@@ -11,6 +11,9 @@
 		4A6110FD24EFD42500AA3F21 /* CSRSSFeedChannelImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A6110FB24EFD42500AA3F21 /* CSRSSFeedChannelImage.m */; };
 		4A61111D24EFF59E00AA3F21 /* CSRSSFeedItemEnclosure.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A61111B24EFF59E00AA3F21 /* CSRSSFeedItemEnclosure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A61111E24EFF59E00AA3F21 /* CSRSSFeedItemEnclosure.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A61111C24EFF59E00AA3F21 /* CSRSSFeedItemEnclosure.m */; };
+		AD89EA5126732FF7006AA908 /* CSFeedKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = AD89EA4E26732FF7006AA908 /* CSFeedKit.podspec */; };
+		AD89EA5226732FF7006AA908 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = AD89EA4F26732FF7006AA908 /* CHANGELOG.md */; };
+		AD89EA5326732FF7006AA908 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AD89EA5026732FF7006AA908 /* README.md */; };
 		ADD605D51D4E5FC100C6E41A /* CSFeedChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = ADD605D31D4E5FC100C6E41A /* CSFeedChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADD605D61D4E5FC100C6E41A /* CSFeedChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD605D41D4E5FC100C6E41A /* CSFeedChannel.m */; };
 		ADD605D91D4E6B0B00C6E41A /* CSFeedChannelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD605D71D4E6A3D00C6E41A /* CSFeedChannelTests.m */; };
@@ -48,6 +51,9 @@
 		4A6110FB24EFD42500AA3F21 /* CSRSSFeedChannelImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSRSSFeedChannelImage.m; sourceTree = "<group>"; };
 		4A61111B24EFF59E00AA3F21 /* CSRSSFeedItemEnclosure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSRSSFeedItemEnclosure.h; sourceTree = "<group>"; };
 		4A61111C24EFF59E00AA3F21 /* CSRSSFeedItemEnclosure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSRSSFeedItemEnclosure.m; sourceTree = "<group>"; };
+		AD89EA4E26732FF7006AA908 /* CSFeedKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CSFeedKit.podspec; sourceTree = "<group>"; };
+		AD89EA4F26732FF7006AA908 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		AD89EA5026732FF7006AA908 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		ADD605D31D4E5FC100C6E41A /* CSFeedChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSFeedChannel.h; sourceTree = "<group>"; };
 		ADD605D41D4E5FC100C6E41A /* CSFeedChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedChannel.m; sourceTree = "<group>"; };
 		ADD605D71D4E6A3D00C6E41A /* CSFeedChannelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSFeedChannelTests.m; sourceTree = "<group>"; };
@@ -67,7 +73,7 @@
 		ADE5FFA61D4D37CA005C6E43 /* CSFeedKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CSFeedKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE5FFA91D4D37CA005C6E43 /* CSFeedKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSFeedKit.h; sourceTree = "<group>"; };
 		ADE5FFAB1D4D37CA005C6E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ADE5FFB01D4D37CA005C6E43 /* CSFeedKitTests-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CSFeedKitTests-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADE5FFB01D4D37CA005C6E43 /* CSFeedKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSFeedKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADE5FFB71D4D37CA005C6E43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADEE842D1D6D9EB200AEB513 /* CSRFC2822DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSRFC2822DateFormatter.h; sourceTree = "<group>"; };
 		ADEE842E1D6D9EB200AEB513 /* CSRFC2822DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSRFC2822DateFormatter.m; sourceTree = "<group>"; };
@@ -92,6 +98,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD89EA4D26732FD2006AA908 /* Packaging */ = {
+			isa = PBXGroup;
+			children = (
+				AD89EA4E26732FF7006AA908 /* CSFeedKit.podspec */,
+				AD89EA4F26732FF7006AA908 /* CHANGELOG.md */,
+				AD89EA5026732FF7006AA908 /* README.md */,
+			);
+			name = Packaging;
+			sourceTree = "<group>";
+		};
 		ADD605E41D4E7D9700C6E41A /* RSS */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +130,7 @@
 			children = (
 				ADE5FFA81D4D37CA005C6E43 /* CSFeedKit */,
 				ADE5FFB41D4D37CA005C6E43 /* CSFeedKitTests */,
+				AD89EA4D26732FD2006AA908 /* Packaging */,
 				ADE5FFA71D4D37CA005C6E43 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				ADE5FFA61D4D37CA005C6E43 /* CSFeedKit.framework */,
-				ADE5FFB01D4D37CA005C6E43 /* CSFeedKitTests-macOS.xctest */,
+				ADE5FFB01D4D37CA005C6E43 /* CSFeedKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,9 +197,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		ADE5FFA51D4D37CA005C6E43 /* CSFeedKit-macOS */ = {
+		ADE5FFA51D4D37CA005C6E43 /* CSFeedKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADE5FFBA1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKit-macOS" */;
+			buildConfigurationList = ADE5FFBA1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKit" */;
 			buildPhases = (
 				ADE5FFA11D4D37CA005C6E43 /* Sources */,
 				ADE5FFA21D4D37CA005C6E43 /* Frameworks */,
@@ -193,14 +210,14 @@
 			);
 			dependencies = (
 			);
-			name = "CSFeedKit-macOS";
+			name = CSFeedKit;
 			productName = CSFeedKit;
 			productReference = ADE5FFA61D4D37CA005C6E43 /* CSFeedKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		ADE5FFAF1D4D37CA005C6E43 /* CSFeedKitTests-macOS */ = {
+		ADE5FFAF1D4D37CA005C6E43 /* CSFeedKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ADE5FFBD1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKitTests-macOS" */;
+			buildConfigurationList = ADE5FFBD1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKitTests" */;
 			buildPhases = (
 				ADE5FFAC1D4D37CA005C6E43 /* Sources */,
 				ADE5FFAD1D4D37CA005C6E43 /* Frameworks */,
@@ -211,9 +228,9 @@
 			dependencies = (
 				ADE5FFB31D4D37CA005C6E43 /* PBXTargetDependency */,
 			);
-			name = "CSFeedKitTests-macOS";
+			name = CSFeedKitTests;
 			productName = CSFeedKitTests;
-			productReference = ADE5FFB01D4D37CA005C6E43 /* CSFeedKitTests-macOS.xctest */;
+			productReference = ADE5FFB01D4D37CA005C6E43 /* CSFeedKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -222,7 +239,7 @@
 		ADE5FF9D1D4D37CA005C6E43 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Cătălin Stan";
 				TargetAttributes = {
 					ADE5FFA51D4D37CA005C6E43 = {
@@ -246,8 +263,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ADE5FFA51D4D37CA005C6E43 /* CSFeedKit-macOS */,
-				ADE5FFAF1D4D37CA005C6E43 /* CSFeedKitTests-macOS */,
+				ADE5FFA51D4D37CA005C6E43 /* CSFeedKit */,
+				ADE5FFAF1D4D37CA005C6E43 /* CSFeedKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -257,6 +274,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD89EA5326732FF7006AA908 /* README.md in Resources */,
+				AD89EA5126732FF7006AA908 /* CSFeedKit.podspec in Resources */,
+				AD89EA5226732FF7006AA908 /* CHANGELOG.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +322,7 @@
 /* Begin PBXTargetDependency section */
 		ADE5FFB31D4D37CA005C6E43 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = ADE5FFA51D4D37CA005C6E43 /* CSFeedKit-macOS */;
+			target = ADE5FFA51D4D37CA005C6E43 /* CSFeedKit */;
 			targetProxy = ADE5FFB21D4D37CA005C6E43 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -331,6 +351,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -357,7 +378,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = CSFeedKit/Info.plist;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.catalinstan.CSFeedKit;
@@ -391,6 +411,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -411,7 +432,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = CSFeedKit/Info.plist;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.catalinstan.CSFeedKit;
 				PRODUCT_MODULE_NAME = CSFeedKit;
@@ -436,6 +456,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MARKETING_VERSION = 0.3.0;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -457,6 +478,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MARKETING_VERSION = 0.3.0;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -474,6 +496,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.catalinstan.CSFeedKitTests;
 				PRODUCT_MODULE_NAME = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -491,6 +514,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = com.catalinstan.CSFeedKitTests;
 				PRODUCT_MODULE_NAME = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -509,7 +533,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADE5FFBA1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKit-macOS" */ = {
+		ADE5FFBA1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADE5FFBB1D4D37CA005C6E43 /* Debug */,
@@ -518,7 +542,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ADE5FFBD1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKitTests-macOS" */ = {
+		ADE5FFBD1D4D37CA005C6E43 /* Build configuration list for PBXNativeTarget "CSFeedKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ADE5FFBE1D4D37CA005C6E43 /* Debug */,

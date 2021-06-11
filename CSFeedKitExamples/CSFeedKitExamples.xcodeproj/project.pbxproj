@@ -87,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				ADD6065B1D4E980700C6E41A /* CSFeedKit.framework */,
-				ADD6065D1D4E980700C6E41A /* CSFeedKitTests-macOS.xctest */,
+				ADD6065D1D4E980700C6E41A /* CSFeedKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,7 +119,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Cătălin Stan";
 				TargetAttributes = {
 					ADD6064A1D4E97F800C6E41A = {
@@ -159,10 +159,10 @@
 			remoteRef = ADD6065A1D4E980700C6E41A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		ADD6065D1D4E980700C6E41A /* CSFeedKitTests-macOS.xctest */ = {
+		ADD6065D1D4E980700C6E41A /* CSFeedKitTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "CSFeedKitTests-macOS.xctest";
+			path = CSFeedKitTests.xctest;
 			remoteRef = ADD6065C1D4E980700C6E41A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -204,6 +204,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -259,6 +260,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

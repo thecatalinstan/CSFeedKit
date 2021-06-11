@@ -6,7 +6,7 @@
 //  Copyright © 2016 Cătălin Stan. All rights reserved.
 //
 
-#import "CSFeedItem.h"
+#import <CSFeedKit/CSFeedItem.h>
 
 @class CSRSSFeedItemEnclosure;
 

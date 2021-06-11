@@ -7,9 +7,9 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "CSFeed.h"
-#import "CSFeedChannel.h"
-#import "CSFeedItem.h"
+#import <CSFeedKit/CSFeed.h>
+#import <CSFeedKit/CSFeedChannel.h>
+#import <CSFeedKit/CSFeedItem.h>
 
 @interface CSFeedTests : XCTestCase
 

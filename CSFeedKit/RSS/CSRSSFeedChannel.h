@@ -6,7 +6,7 @@
 //  Copyright © 2016 Cătălin Stan. All rights reserved.
 //
 
-#import "CSFeedChannel.h"
+#import <CSFeedKit/CSFeedChannel.h>
 
 @class CSRSSFeedChannelImage;
 

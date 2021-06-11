@@ -6,8 +6,8 @@
 //  Copyright © 2016 Cătălin Stan. All rights reserved.
 //
 
-#import "CSFeed.h"
-#import "CSFeedChannel.h"
+#import <CSFeedKit/CSFeed.h>
+#import <CSFeedKit/CSFeedChannel.h>
 
 @implementation CSFeed
 
