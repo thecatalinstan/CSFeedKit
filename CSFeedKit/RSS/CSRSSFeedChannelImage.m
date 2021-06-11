@@ -6,7 +6,7 @@
 //  Copyright © 2020 Cătălin Stan. All rights reserved.
 //
 
-#import "CSRSSFeedChannelImage.h"
+#import <CSFeedKit/CSRSSFeedChannelImage.h>
 
 @implementation CSRSSFeedChannelImage
 

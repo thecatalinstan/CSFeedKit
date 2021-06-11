@@ -6,7 +6,7 @@
 //  Copyright © 2020 Cătălin Stan. All rights reserved.
 //
 
-#import "CSRSSFeedItemEnclosure.h"
+#import <CSFeedKit/CSRSSFeedItemEnclosure.h>
 
 @implementation CSRSSFeedItemEnclosure
 

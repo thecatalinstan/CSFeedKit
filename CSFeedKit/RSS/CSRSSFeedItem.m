@@ -6,8 +6,8 @@
 //  Copyright © 2016 Cătălin Stan. All rights reserved.
 //
 
-#import "CSRSSFeedItem.h"
-#import "CSRSSFeedItemEnclosure.h"
+#import <CSFeedKit/CSRSSFeedItem.h>
+#import <CSFeedKit/CSRSSFeedItemEnclosure.h>
 
 @implementation CSRSSFeedItem
 
