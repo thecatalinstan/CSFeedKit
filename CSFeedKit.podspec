@@ -14,12 +14,11 @@ Pod::Spec.new do |s|
 
   s.module_name                 = "CSFeedKit"
 
-  s.source_files                = "CSFeedKit/Source/*.{h,m}", "CSFeedKit/Headers/*.h"
+  s.source_files                = "CSFeedKit/Source/*.{h,m}", "CSFeedKit/Headers/CSFeedKit/*.h"
   s.public_header_files         = "CSFeedKit/Headers/CSFeedKit/*.h"
 
   s.osx.deployment_target       = "10.9"
   s.osx.frameworks              = "Foundation"
 
   s.requires_arc                = true
-
 end
