@@ -6,9 +6,9 @@ This file includes all notable changes to CSFeedKit.
 
 ---
 
-## [1.0.0](https://github.com/thecatalinstan/CSFeedKit/releases/tag/1.0..0) (06/11/2021)
+## [1.0.0](https://github.com/thecatalinstan/CSFeedKit/releases/tag/1.0.0) (06/22/2021)
 
-**Released on Friday, June 21, 2021**.
+**Released on Tuesday, June 22, 2021**.
 
 This release adds support for the Swift Package Manager. It also updates the projects to Xcode 12.5 recommended build settings. 
 Minimum macOS version is now `10.9`, mainly for Xcode 12 compatibility, should still work fine on macOS >= 10.7.
